@@ -1,0 +1,935 @@
+[
+    {
+        "id": "Q1",
+        "key": "SKIN_CONCERN",
+        "text": {
+            "en": "What is your current skin concern?",
+            "fr": "Quel est votre problème de peau actuel?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "DRYNESS",
+                "text": {
+                    "en": "Dryness",
+                    "fr": "Sécheresse"
+                },
+                "tags": [
+                    "DRY_SKIN"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "ACNE",
+                "text": {
+                    "en": "Acne",
+                    "fr": "Acné"
+                },
+                "tags": [
+                    "ACNE-PRONE"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "HYPERPIGMENTATION",
+                "text": {
+                    "en": "Hyperpigmentation",
+                    "fr": "Hyperpigmentation"
+                },
+                "tags": [
+                    "HYPERGMENTED"
+                ]
+            },
+            {
+                "id": "A4",
+                "key": "SENSITIVE_SKIN",
+                "text": {
+                    "en": "Sensitive Skin",
+                    "fr": "Peau sensible"
+                },
+                "tags": [
+                    "SENSITIVE"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q2",
+        "key": "SKIN_TYPE",
+        "text": {
+            "en": "How would you describe your skin type?",
+            "fr": "Comment décririez-vous votre type de peau?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "OILY",
+                "text": {
+                    "en": "Oily",
+                    "fr": "Grasse"
+                },
+                "tags": [
+                    "OILY_SKIN"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "COMBINATION",
+                "text": {
+                    "en": "Combination",
+                    "fr": "Mixte"
+                },
+                "tags": [
+                    "COMBINATION_SKIN"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "NORMAL",
+                "text": {
+                    "en": "Normal",
+                    "fr": "Normale"
+                },
+                "tags": [
+                    "NORMAL_SKIN"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q3",
+        "key": "REDNESS_OR_IRRITATION",
+        "text": {
+            "en": "Do you experience redness or irritation?",
+            "fr": "Avez-vous des rougeurs ou des irritations?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "SENSITIVE",
+                    "IRRITATED"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": []
+            }
+        ]
+    },
+    {
+        "id": "Q4",
+        "key": "SUNSCREEN_HABITS",
+        "text": {
+            "en": "How often do you wear sunscreen?",
+            "fr": "À quelle fréquence portez-vous un écran solaire?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "EVERY_DAY",
+                "text": {
+                    "en": "Every day",
+                    "fr": "Tous les jours"
+                },
+                "tags": [
+                    "SUNSCREEN_REGULARLY"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "OCCASIONALLY",
+                "text": {
+                    "en": "Occasionally",
+                    "fr": "De temps en temps"
+                },
+                "tags": [
+                    "SUNSCREEN_OCCASIONALLY"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "RARELY",
+                "text": {
+                    "en": "Rarely",
+                    "fr": "Rarement"
+                },
+                "tags": [
+                    "RARELY_USE_SUNSCREEN"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q5",
+        "key": "WATER_INTAKE",
+        "text": {
+            "en": "How would you rate your water intake?",
+            "fr": "Comment évaluez-vous votre consommation d'eau?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "ADEQUATE",
+                "text": {
+                    "en": "Adequate",
+                    "fr": "Adéquate"
+                },
+                "tags": [
+                    "HYDRATED"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "MODERATE",
+                "text": {
+                    "en": "Moderate",
+                    "fr": "Modérée"
+                },
+                "tags": [
+                    "MODERATELY_HYDRATED"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "LOW",
+                "text": {
+                    "en": "Low",
+                    "fr": "Faible"
+                },
+                "tags": [
+                    "DEHYDRATED"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q6",
+        "key": "SKINCARE_PRODUCT_USAGE",
+        "text": {
+            "en": "Are you currently using any skincare products?",
+            "fr": "Utilisez-vous actuellement des produits de soin de la peau?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "USING_SKINCARE_PRODUCTS"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": [
+                    "NOT_USING_SKINCARE_PRODUCTS"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q7",
+        "key": "SKINCARE_ROUTINE",
+        "text": {
+            "en": "How would you describe your current skincare routine?",
+            "fr": "Comment décririez-vous votre routine de soins actuelle?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "SIMPLE",
+                "text": {
+                    "en": "Simple",
+                    "fr": "Simple"
+                },
+                "tags": [
+                    "SIMPLE_ROUTINE"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "ELABORATE",
+                "text": {
+                    "en": "Elaborate",
+                    "fr": "Elaborée"
+                },
+                "tags": [
+                    "ELABORATE_ROUTINE"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q8",
+        "key": "SKINCARE_INGREDIENT_ALLERGIES",
+        "text": {
+            "en": "Do you have any allergies to specific skincare ingredients?",
+            "fr": "Avez-vous des allergies à des ingrédients spécifiques de soins de la peau?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "ALLERGIC"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": []
+            }
+        ]
+    },
+    {
+        "id": "Q9",
+        "key": "STRESS_LEVEL",
+        "text": {
+            "en": "How would you describe your stress level?",
+            "fr": "Comment évalueriez-vous votre niveau de stress?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "HIGH",
+                "text": {
+                    "en": "High",
+                    "fr": "Élevé"
+                },
+                "tags": [
+                    "HIGH_STRESS"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "MODERATE",
+                "text": {
+                    "en": "Moderate",
+                    "fr": "Modéré"
+                },
+                "tags": [
+                    "MODERATE_STRESS"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "LOW",
+                "text": {
+                    "en": "Low",
+                    "fr": "Faible"
+                },
+                "tags": [
+                    "LOW_STRESS"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q10",
+        "key": "MEDICATIONS_AFFECTING_SKIN",
+        "text": {
+            "en": "Are you currently taking any medications that may affect your skin?",
+            "fr": "Prenez-vous actuellement des médicaments qui pourraient affecter votre peau?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "MEDICATIONS"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": []
+            }
+        ]
+    },
+    {
+        "id": "Q11",
+        "key": "CLEANSING_FREQUENCY",
+        "text": {
+            "en": "Cleansing Frequency",
+            "fr": "Fréquence de nettoyage"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "TWICE_A_DAY",
+                "text": {
+                    "en": "Twice a day",
+                    "fr": "Deux fois par jour"
+                },
+                "tags": [
+                    "FREQUENT_CLEANSING"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "ONCE_A_DAY",
+                "text": {
+                    "en": "Once a day",
+                    "fr": "Une fois par jour"
+                },
+                "tags": [
+                    "DAILY_CLEANSING"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "LESS_THAN_ONCE_A_DAY",
+                "text": {
+                    "en": "Less than once a day",
+                    "fr": "Moins d'une fois par jour"
+                },
+                "tags": [
+                    "INFREQUENT_CLEANSING"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q12",
+        "key": "EXFOLIATION_FREQUENCY",
+        "text": {
+            "en": "Exfoliation Frequency",
+            "fr": "Fréquence d'exfoliation"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "WEEKLY",
+                "text": {
+                    "en": "Weekly",
+                    "fr": "Hebdomadaire"
+                },
+                "tags": [
+                    "WEEKLY_EXFOLIATION"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "MONTHLY",
+                "text": {
+                    "en": "Monthly",
+                    "fr": "Mensuelle"
+                },
+                "tags": [
+                    "MONTHLY_EXFOLIATION"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "RARELY",
+                "text": {
+                    "en": "Rarely",
+                    "fr": "Rarement"
+                },
+                "tags": [
+                    "INFREQUENT_EXFOLIATION"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q13",
+        "key": "POLLUTANT_EXPOSURE",
+        "text": {
+            "en": "Pollutant Exposure",
+            "fr": "Exposition aux polluants"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "EXPOSED_TO_POLLUTANTS"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": []
+            }
+        ]
+    },
+    {
+        "id": "Q14",
+        "key": "SLEEP_PATTERN",
+        "text": {
+            "en": "Sleep Pattern",
+            "fr": "Schéma de sommeil"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "REGULAR_AND_SUFFICIENT",
+                "text": {
+                    "en": "Regular and sufficient",
+                    "fr": "Régulier et suffisant"
+                },
+                "tags": [
+                    "GOOD_SLEEP"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "IRREGULAR_OR_INSUFFICIENT",
+                "text": {
+                    "en": "Irregular or insufficient",
+                    "fr": "Irrégulier ou insuffisant"
+                },
+                "tags": [
+                    "POOR_SLEEP"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q15",
+        "key": "DIY_SKINCARE_TREATMENTS",
+        "text": {
+            "en": "DIY Skincare Treatments",
+            "fr": "Traitements de soins de la peau faits maison"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "DIY_TREATMENTS"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": []
+            }
+        ]
+    },
+    {
+        "id": "Q16",
+        "key": "DIET_DESCRIPTION",
+        "text": {
+            "en": "How would you describe your diet?",
+            "fr": "Comment décririez-vous votre régime alimentaire?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "BALANCED",
+                "text": {
+                    "en": "Balanced",
+                    "fr": "Équilibré"
+                },
+                "tags": [
+                    "BALANCED_DIET"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "UNHEALTHY",
+                "text": {
+                    "en": "Unhealthy",
+                    "fr": "Malsain"
+                },
+                "tags": [
+                    "UNHEALTHY_DIET"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q17",
+        "key": "HORMONAL_CHANGES",
+        "text": {
+            "en": "Hormonal Changes",
+            "fr": "Changements hormonaux"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "HORMONAL_CHANGES"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": []
+            }
+        ]
+    },
+    {
+        "id": "Q18",
+        "key": "DERMATOLOGIST_VISITS",
+        "text": {
+            "en": "Dermatologist Visits",
+            "fr": "Visites chez le dermatologue"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "REGULARLY",
+                "text": {
+                    "en": "Regularly",
+                    "fr": "Régulièrement"
+                },
+                "tags": [
+                    "REGULAR_DERMATOLOGIST_VISITS"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "OCCASIONALLY",
+                "text": {
+                    "en": "Occasionally",
+                    "fr": "De temps en temps"
+                },
+                "tags": [
+                    "OCCASIONAL_DERMATOLOGIST_VISITS"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "RARELY_OR_NEVER",
+                "text": {
+                    "en": "Rarely or Never",
+                    "fr": "Rarement ou jamais"
+                },
+                "tags": [
+                    "INFREQUENT_DERMATOLOGIST_VISITS"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q19",
+        "key": "DURATION_OF_SKIN_ISSUES",
+        "text": {
+            "en": "Duration of Skin Issues",
+            "fr": "Durée des problèmes de peau"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "LESS_THAN_A_MONTH",
+                "text": {
+                    "en": "Less than a month",
+                    "fr": "Moins d'un mois"
+                },
+                "tags": [
+                    "RECENT_ISSUES"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "1-3_MONTHS",
+                "text": {
+                    "en": "1-3 months",
+                    "fr": "1 à 3 mois"
+                },
+                "tags": [
+                    "ISSUES_FOR_1-3_MONTHS"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "MORE_THAN_3_MONTHS",
+                "text": {
+                    "en": "More than 3 months",
+                    "fr": "Plus de 3 mois"
+                },
+                "tags": [
+                    "PERSISTENT_ISSUES"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q20",
+        "key": "RECENT_SKIN_TREATMENTS",
+        "text": {
+            "en": "Recent Skin Treatments",
+            "fr": "Traitements cutanés récents"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "RECENT_TREATMENTS"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": []
+            }
+        ]
+    },
+    {
+        "id": "Q21",
+        "key": "SKIN_TONE_ASSESSMENT",
+        "text": {
+            "en": "Skin Tone Assessment",
+            "fr": "Évaluation du teint de la peau"
+        },
+        "type": "TEXT_IMAGE",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "EVEN_SKIN_TONE",
+                "text": {
+                    "en": "Even Skin Tone",
+                    "fr": "Teint de peau uniforme"
+                },
+                "image": "https://picsum.photos/200/300",
+                "tags": [
+                    "EVEN_SKIN_TONE"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "SKIN_DISCOLORATION",
+                "children": [
+                    {
+                        "id": "A21",
+                        "key": "SLIGHT_DISCOLORATION",
+                        "text": {
+                            "en": "Slight Discoloration",
+                            "fr": "Légère décoloration"
+                        },
+                        "image": "https://picsum.photos/200/300",
+                        "tags": [
+                            "SLIGHT_DISCOLORATION"
+                        ]
+                    },
+                    {
+                        "id": "A22",
+                        "key": "MODERATE_DISCOLORATION",
+                        "text": {
+                            "en": "Moderate Discoloration",
+                            "fr": "Décoloration modérée"
+                        },
+                        "image": "https://picsum.photos/200/300",
+                        "tags": [
+                            "MODERATE_DISCOLORATION"
+                        ]
+                    },
+                    {
+                        "id": "A23",
+                        "key": "SEVERE_DISCOLORATION",
+                        "text": {
+                            "en": "Severe Discoloration",
+                            "fr": "Décoloration sévère"
+                        },
+                        "image": "https://picsum.photos/200/300",
+                        "tags": [
+                            "SEVERE_DISCOLORATION"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "DARK_SPOTS",
+                "text": {
+                    "en": "Dark Spots",
+                    "fr": "Taches sombres"
+                },
+                "image": "https://picsum.photos/200/300",
+                "tags": [
+                    "DARK_SPOTS"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q22",
+        "key": "HYDRATION_LEVEL_ASSESSMENT",
+        "text": {
+            "en": "Hydration Level Assessment",
+            "fr": "Évaluation du niveau d'hydratation"
+        },
+        "type": "TEXT_IMAGE",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "HYDRATED_SKIN",
+                "text": {
+                    "en": "Hydrated Skin",
+                    "fr": "Peau hydratée"
+                },
+                "image": "https://picsum.photos/200/300",
+                "tags": [
+                    "HYDRATED_SKIN"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "SKIN_DEHYDRATION",
+                "children": [
+                    {
+                        "id": "A21",
+                        "key": "MILD_DEHYDRATION",
+                        "text": {
+                            "en": "Mild Dehydration",
+                            "fr": "Déshydratation légère"
+                        },
+                        "image": "https: //picsum.photos/200/300",
+                        "tags": [
+                            "MILD_DEHYDRATION"
+                        ]
+                    },
+                    {
+                        "id": "A22",
+                        "key": "MODERATE_DEHYDRATION",
+                        "text": {
+                            "en": "Moderate Dehydration",
+                            "fr": "Déshydratation modérée"
+                        },
+                        "image": "https://picsum.photos/200/300",
+                        "tags": [
+                            "MODERATE_DEHYDRATION"
+                        ]
+                    },
+                    {
+                        "id": "A23",
+                        "key": "SEVERE_DEHYDRATION",
+                        "text": {
+                            "en": "Severe Dehydration",
+                            "fr": "Déshydratation sévère"
+                        },
+                        "image": "https://picsum.photos/200/300",
+                        "tags": [
+                            "SEVERE_DEHYDRATION"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "OILY_SKIN",
+                "text": {
+                    "en": "Oily Skin",
+                    "fr": "Peau grasse"
+                },
+                "image": "https://picsum.photos/200/300",
+                "tags": [
+                    "OILY_SKIN"
+                ]
+            }
+        ]
+    }
+]
