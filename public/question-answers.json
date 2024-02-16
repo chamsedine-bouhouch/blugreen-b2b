@@ -1,0 +1,182 @@
+[
+    {
+        "id": "Q1",
+        "key": "SKIN_CONCERN",
+        "text": {
+            "en": "What is your current skin concern?",
+            "fr": "Quel est votre problème de peau actuel?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "DRYNESS",
+                "text": {
+                    "en": "Dryness",
+                    "fr": "Sécheresse"
+                },
+                "tags": [
+                    "DRY_SKIN"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "ACNE",
+                "text": {
+                    "en": "Acne",
+                    "fr": "Acné"
+                },
+                "tags": [
+                    "ACNE-PRONE"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "HYPERPIGMENTATION",
+                "text": {
+                    "en": "Hyperpigmentation",
+                    "fr": "Hyperpigmentation"
+                },
+                "tags": [
+                    "HYPERGMENTED"
+                ]
+            },
+            {
+                "id": "A4",
+                "key": "SENSITIVE_SKIN",
+                "text": {
+                    "en": "Sensitive Skin",
+                    "fr": "Peau sensible"
+                },
+                "tags": [
+                    "SENSITIVE"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q2",
+        "key": "SKIN_TYPE",
+        "text": {
+            "en": "How would you describe your skin type?",
+            "fr": "Comment décririez-vous votre type de peau?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "OILY",
+                "text": {
+                    "en": "Oily",
+                    "fr": "Grasse"
+                },
+                "tags": [
+                    "OILY_SKIN"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "COMBINATION",
+                "text": {
+                    "en": "Combination",
+                    "fr": "Mixte"
+                },
+                "tags": [
+                    "COMBINATION_SKIN"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "NORMAL",
+                "text": {
+                    "en": "Normal",
+                    "fr": "Normale"
+                },
+                "tags": [
+                    "NORMAL_SKIN"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Q3",
+        "key": "REDNESS_OR_IRRITATION",
+        "text": {
+            "en": "Do you experience redness or irritation?",
+            "fr": "Avez-vous des rougeurs ou des irritations?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "YES",
+                "text": {
+                    "en": "Yes",
+                    "fr": "Oui"
+                },
+                "tags": [
+                    "SENSITIVE",
+                    "IRRITATED"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "NO",
+                "text": {
+                    "en": "No",
+                    "fr": "Non"
+                },
+                "tags": []
+            }
+        ]
+    },
+    {
+        "id": "Q4",
+        "key": "SUNSCREEN_HABITS",
+        "text": {
+            "en": "How often do you wear sunscreen?",
+            "fr": "À quelle fréquence portez-vous un écran solaire?"
+        },
+        "type": "TEXT",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "EVERY_DAY",
+                "text": {
+                    "en": "Every day",
+                    "fr": "Tous les jours"
+                },
+                "tags": [
+                    "SUNSCREEN_REGULARLY"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "OCCASIONALLY",
+                "text": {
+                    "en": "Occasionally",
+                    "fr": "De temps en temps"
+                },
+                "tags": [
+                    "SUNSCREEN_OCCASIONALLY"
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "RARELY",
+                "text": {
+                    "en": "Rarely",
+                    "fr": "Rarement"
+                },
+                "tags": [
+                    "RARELY_USE_SUNSCREEN"
+                ]
+            }
+        ]
+    }
+    
+]
