@@ -13,7 +13,7 @@ function QuizResult() {
           <tr>
             <th>Question</th>
             <th>Response</th>
-            <th>Tags</th>
+            <th>tag</th>
           </tr>
         </thead>
         <tbody>
@@ -28,6 +28,27 @@ function QuizResult() {
           )}
         </tbody>
       </table>
+
+      {/* <h2>Tags</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tag</th>
+          </tr>
+        </thead>
+        {Object.entries(userResponses).map(
+          ([questionKey, { responseTags }]) => (
+            <tbody>
+              {responseTags.map((tag, index) => (
+                <tr key={index}>
+                  <td>{tag}</td>
+                </tr>
+              ))}
+            </tbody>
+          )
+        )}
+      </table> */}
     </div>
   );
 }

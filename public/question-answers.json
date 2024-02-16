@@ -133,6 +133,85 @@
             }
         ]
     },
+    
+    {
+        "id": "Q22",
+        "key": "HYDRATION_LEVEL_ASSESSMENT",
+        "text": {
+            "en": "Hydration Level Assessment",
+            "fr": "Évaluation du niveau d'hydratation"
+        },
+        "type": "TEXT_IMAGE",
+        "numberOfAllowedAnswers": 1,
+        "answers": [
+            {
+                "id": "A1",
+                "key": "HYDRATED_SKIN",
+                "text": {
+                    "en": "Hydrated Skin",
+                    "fr": "Peau hydratée"
+                },
+                "image": "https://picsum.photos/200/300",
+                "tags": [
+                    "HYDRATED_SKIN"
+                ]
+            },
+            {
+                "id": "A2",
+                "key": "SKIN_DEHYDRATION",
+                "children": [
+                    {
+                        "id": "A21",
+                        "key": "MILD_DEHYDRATION",
+                        "text": {
+                            "en": "Mild Dehydration",
+                            "fr": "Déshydratation légère"
+                        },
+                        "image": "https: //picsum.photos/200/300",
+                        "tags": [
+                            "MILD_DEHYDRATION"
+                        ]
+                    },
+                    {
+                        "id": "A22",
+                        "key": "MODERATE_DEHYDRATION",
+                        "text": {
+                            "en": "Moderate Dehydration",
+                            "fr": "Déshydratation modérée"
+                        },
+                        "image": "https://picsum.photos/200/300",
+                        "tags": [
+                            "MODERATE_DEHYDRATION"
+                        ]
+                    },
+                    {
+                        "id": "A23",
+                        "key": "SEVERE_DEHYDRATION",
+                        "text": {
+                            "en": "Severe Dehydration",
+                            "fr": "Déshydratation sévère"
+                        },
+                        "image": "https://picsum.photos/200/300",
+                        "tags": [
+                            "SEVERE_DEHYDRATION"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "A3",
+                "key": "OILY_SKIN",
+                "text": {
+                    "en": "Oily Skin",
+                    "fr": "Peau grasse"
+                },
+                "image": "https://picsum.photos/200/300",
+                "tags": [
+                    "OILY_SKIN"
+                ]
+            }
+        ]
+    },
     {
         "id": "Q4",
         "key": "SUNSCREEN_HABITS",
@@ -178,5 +257,6 @@
             }
         ]
     }
+
     
 ]

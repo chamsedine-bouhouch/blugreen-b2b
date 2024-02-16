@@ -17,6 +17,7 @@ function Quizz() {
         const data = await response.json();
         setJsonData(data);
         setLoading(false);
+        // console.log(jsonData.[4][1].children);
       } catch (error) {
         console.error("Error fetching JSON data: ", error);
         setLoading(false);
@@ -40,9 +41,13 @@ function Quizz() {
     const responseTags = jsonData[currentQuestionIndex].answers.find(
       (answer) => answer.key === responseKey
     )?.tags;
+    const hasChildren = jsonData[currentQuestionIndex].answers.find(
+      (answer) => answer.children === responseKey
+    );
+
     setUserResponses({
       ...userResponses,
-      [questionKey]: { responseKey, responseTags },
+      [questionKey]: { responseKey, responseTags, hasChildren },
     });
   };
 
@@ -71,24 +76,52 @@ function Quizz() {
               <form className="answers">
                 {jsonData[currentQuestionIndex].answers.map((answer) => (
                   <div key={answer.id}>
-                    <input
-                      type="radio"
-                      id={answer.id}
-                      name={jsonData[currentQuestionIndex].key}
-                      value={answer.key}
-                      checked={
-                        userResponses[jsonData[currentQuestionIndex].key]
-                          ?.responseKey === answer.key
-                      }
-                      onChange={handleResponseChange}
-                    />
-
-                    {answer && answer.text && (
-                      <label htmlFor={answer.id}>{answer.text.en}</label>
+                    {!answer.children ? ( // Check if answer has no children
+                      <React.Fragment>
+                        <input
+                          type="radio"
+                          id={answer.id}
+                          name={jsonData[currentQuestionIndex].key}
+                          value={answer.key}
+                          checked={
+                            userResponses[jsonData[currentQuestionIndex].key]
+                              ?.responseKey === answer.key
+                          }
+                          onChange={handleResponseChange}
+                        />
+                        {answer && answer.text && (
+                          <label htmlFor={answer.id}>{answer.text.en}</label>
+                        )}
+                      </React.Fragment>
+                    ) : (
+                      // Render children differently
+                      <div key={answer.id} className="child-container">
+                        {answer.key}{" "}
+                        {answer.children.map((child) => (
+                          <div key={child.id} className="child-answer">
+                            <input
+                              type="radio"
+                              id={child.id}
+                              name={jsonData[currentQuestionIndex].key}
+                              value={child.key}
+                              checked={
+                                userResponses[
+                                  jsonData[currentQuestionIndex].key
+                                ]?.responseKey === child.key
+                              }
+                              onChange={handleResponseChange}
+                            />
+                            {child && child.text && (
+                              <label htmlFor={child.id}>{child.text.en}</label>
+                            )}
+                          </div>
+                        ))}
+                      </div>
                     )}
                   </div>
                 ))}
               </form>
+
               {currentQuestionIndex === jsonData.length - 1 ? (
                 <button onClick={handleSubmitQuiz}>Submit Quiz</button>
               ) : (

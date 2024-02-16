@@ -38,6 +38,10 @@ body {
     margin-right: 10px;
   }
   
+  .child-answer {
+    margin-left: 10px; /* Indent children */
+    
+  } 
   button {
     background-color: rgb(39, 152, 39);
     border: none;
