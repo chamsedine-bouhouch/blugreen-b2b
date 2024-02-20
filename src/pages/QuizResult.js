@@ -2,9 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 function QuizResult() {
-  const location = useLocation(); // Get state from previous route
-  const { userResponses } = location.state; // Get user responses from state { state: { userResponses: userResponses } }
-  console.log(userResponses);
+  const location = useLocation();
+  const { userResponses } = location.state;
 
   return (
     <div className="container">
@@ -22,25 +21,39 @@ function QuizResult() {
             <tr key={questionKey}>
               <td>{questionKey}</td>
               <td>
-                <table>
-                  <tbody>
-                    {response.responseKeys &&
-                      response.responseKeys.map((key, index) => (
-                        <tr key={index}>
-                          <td>{key}</td>
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
+                {response.responseKeys && response.responseKeys.length === 1 ? (
+                  response.responseKeys[0]
+                ) : (
+                  <table>
+                    <tbody>
+                      {response.responseKeys &&
+                        response.responseKeys.map((key, index) => (
+                          <tr key={index}>
+                            <td>{key}</td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                )}
                 {response.textInputValue && (
                   <span>{response.textInputValue}</span>
                 )}
               </td>
               <td>
-                {response.responseTags &&
-                  response.responseTags.map((tag, index) => (
-                    <span key={index}>{tag}</span>
-                  ))}
+                {response.responseTags && response.responseTags.length === 1 ? (
+                  response.responseTags[0]
+                ) : (
+                  <table>
+                    <tbody>
+                      {response.responseTags &&
+                        response.responseTags.map((tag, index) => (
+                          <tr key={index}>
+                            <td>{tag}</td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                )}
               </td>
             </tr>
           ))}

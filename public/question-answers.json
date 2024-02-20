@@ -219,44 +219,16 @@
             "en": "How often do you wear sunscreen?",
             "fr": "À quelle fréquence portez-vous un écran solaire?"
         },
-        "type": "TEXT",
+        "type": "TEXT_INPUT",
         "numberOfAllowedAnswers": 1,
         "answers": [
             {
                 "id": "A1",
-                "key": "EVERY_DAY",
-                "text": {
-                    "en": "Every day",
-                    "fr": "Tous les jours"
-                },
-                "tags": [
-                    "SUNSCREEN_REGULARLY"
-                ]
-            },
-            {
-                "id": "A2",
-                "key": "OCCASIONALLY",
-                "text": {
-                    "en": "Occasionally",
-                    "fr": "De temps en temps"
-                },
-                "tags": [
-                    "SUNSCREEN_OCCASIONALLY"
-                ]
-            },
-            {
-                "id": "A3",
-                "key": "RARELY",
-                "text": {
-                    "en": "Rarely",
-                    "fr": "Rarement"
-                },
-                "tags": [
-                    "RARELY_USE_SUNSCREEN"
-                ]
+                "key": "SUNSCREEN_FREQUENCY",
+                "tags": []
             }
         ]
     }
-
+    
     
 ]

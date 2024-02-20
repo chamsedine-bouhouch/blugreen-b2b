@@ -82,39 +82,40 @@ function Quizz() {
   };
 
   const handleResponseChange = (
-    responseKey, // it could be null if it's a text field
-    responseTags, // it could be null if it's a text field
+    responseKey,
+    responseTags,
     hasChildren,
-    event, // stopping the child event to the parent component or the document level
-    textInputValue // New parameter for text input value
+    event,
+    textInputValue
   ) => {
     if (event) {
-      event.stopPropagation(); // Stop event propagation
+      event.stopPropagation();
     }
 
-    const questionKey = jsonData[currentQuestionIndex].key; // retrieve the question key
+    const questionKey = jsonData[currentQuestionIndex].key;
 
     let updatedResponseKeys = [];
+    let updatedResponseTags = []; // Initialize array to store tags
 
-    // If userResponses already has responseKeys for the question, use them
     if (userResponses[questionKey]?.responseKeys) {
       updatedResponseKeys = [...userResponses[questionKey].responseKeys];
+      updatedResponseTags = [...userResponses[questionKey].responseTags]; // Copy existing tags
     }
 
-    // Toggle selection for the responseKey
     const index = updatedResponseKeys.indexOf(responseKey);
     if (index !== -1) {
-      updatedResponseKeys.splice(index, 1); // Remove responseKey if already selected
+      updatedResponseKeys.splice(index, 1);
+      updatedResponseTags.splice(index, 1); // Remove tag if removing response
     } else {
-      updatedResponseKeys.push(responseKey); // Add responseKey if not selected
+      updatedResponseKeys.push(responseKey);
+      updatedResponseTags.push(responseTags); // Push tag if adding response
     }
 
-    // Update userResponses with the updated responseKeys array
     setUserResponses({
       ...userResponses,
       [questionKey]: {
         responseKeys: updatedResponseKeys,
-        responseTags,
+        responseTags: updatedResponseTags, // Set updated tags array
         hasChildren,
       },
     });
