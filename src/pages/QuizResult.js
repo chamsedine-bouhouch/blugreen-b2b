@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 function QuizResult() {
   const location = useLocation(); // Get state from previous route
   const { userResponses } = location.state; // Get user responses from state { state: { userResponses: userResponses } }
+  console.log(userResponses);
 
   return (
     <div className="container">
@@ -21,12 +22,18 @@ function QuizResult() {
             <tr key={questionKey}>
               <td>{questionKey}</td>
               <td>
-                {response.responseKey && <span>{response.responseKey}</span>}
+                <table>
+                  <tbody>
+                    {response.responseKeys &&
+                      response.responseKeys.map((key, index) => (
+                        <tr key={index}>
+                          <td>{key}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
                 {response.textInputValue && (
                   <span>{response.textInputValue}</span>
-                )}
-                {response.imageURL && (
-                  <img src={response.imageURL} alt="Response" />
                 )}
               </td>
               <td>
