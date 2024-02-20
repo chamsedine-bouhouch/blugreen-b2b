@@ -218,13 +218,21 @@ function Quizz() {
 
   const totalQuestions = jsonData.length;
   const handleNextQuestion = () => {
-    const currentQuestion = jsonData[currentQuestionIndex]; // retrieving the current question from jsonData using the question index
-    const currentQuestionKey = currentQuestion.key; //extracting the key of the current question
-    const selectedResponse = userResponses[currentQuestionKey]; //retrieving the selected response from userresonses using the question key
+    const currentQuestion = jsonData[currentQuestionIndex];
+    const currentQuestionKey = currentQuestion.key;
+    const selectedResponse = userResponses[currentQuestionKey];
 
-    if (selectedResponse || jsonData[currentQuestionIndex].type === "text") {
-      // si la reponse est de type text
-      let nextQuestionIndex = currentQuestionIndex + 1;
+    if (selectedResponse || currentQuestion.type === "text") {
+      let nextQuestionIndex;
+
+      if (
+        currentQuestionIndex === 0 &&
+        selectedResponse?.responseKey === jsonData[0].answers[0].key
+      ) {
+        nextQuestionIndex = 4;
+      } else {
+        nextQuestionIndex = currentQuestionIndex + 1;
+      }
 
       setCurrentQuestionIndex(nextQuestionIndex);
       setSelectedCard(null); // Reset the selected card
@@ -235,12 +243,22 @@ function Quizz() {
 
   const handlePreviousQuestion = () => {
     if (currentQuestionIndex > 0) {
-      //checks if there's a previous question
-      setCurrentQuestionIndex(currentQuestionIndex - 1); //move to the previous question
+      let prevQuestionIndex = currentQuestionIndex - 1; // Default previous question index
 
-      const prevQuestionKey = jsonData[currentQuestionIndex - 1].key; // retrieve the previoous question key
+      if (
+        currentQuestionIndex === 4 &&
+        userResponses[jsonData[0].key]?.responseKey ===
+          jsonData[0].answers[0].key
+      ) {
+        prevQuestionIndex = 0;
+      }
+
+      setCurrentQuestionIndex(prevQuestionIndex);
+
+      // Reset user response for the current question
+      const prevQuestionKey = jsonData[currentQuestionIndex].key;
       setUserResponses((prevResponses) => {
-        const updatedResponses = { ...prevResponses }; //deleting the previous question response
+        const updatedResponses = { ...prevResponses };
         delete updatedResponses[prevQuestionKey];
         return updatedResponses;
       });
@@ -278,15 +296,20 @@ function Quizz() {
   };
 
   const handleSubmitQuiz = () => {
-    const answeredQuestions = Object.keys(userResponses).length;
-    if (answeredQuestions === totalQuestions) {
-      //checks if the user has answered all the questions
+    const lastQuestionIndex = jsonData.length - 1;
+    const lastQuestionKey = jsonData[lastQuestionIndex].key;
+
+    if (
+      currentQuestionIndex === lastQuestionIndex &&
+      userResponses[lastQuestionKey] !== undefined
+    ) {
       setQuizSubmitted(true);
       navigate("/quiz-result", { state: { userResponses: userResponses } });
     } else {
-      alert("Please answer all questions before submitting.");
+      alert("Please answer the last question before submitting.");
     }
   };
+
   const progress = (currentQuestionIndex / totalQuestions) * 100;
 
   return (

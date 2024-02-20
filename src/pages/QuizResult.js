@@ -21,7 +21,6 @@ function QuizResult() {
             <tr key={questionKey}>
               <td>{questionKey}</td>
               <td>
-                {/* Handle different response formats */}
                 {response.responseKey && <span>{response.responseKey}</span>}
                 {response.textInputValue && (
                   <span>{response.textInputValue}</span>
