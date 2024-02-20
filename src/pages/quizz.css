@@ -55,9 +55,40 @@ body {
 
 .card-content input[type="radio"] {
   margin-right: 10px;
-  display: none; /* Hide radio input */
+  display: none; 
+}
+.progress-bar-container {
+  width: 25%;
+  height: 15px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+.card-content input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+
+.card-content input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);}
+  
 button {
   background-color: rgb(39, 152, 39);
   border: none;

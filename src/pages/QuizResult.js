@@ -13,42 +13,33 @@ function QuizResult() {
           <tr>
             <th>Question</th>
             <th>Response</th>
-            <th>tag</th>
+            <th>Tags</th>
           </tr>
         </thead>
         <tbody>
-          {Object.entries(userResponses).map(
-            ([questionKey, { responseKey, responseTags }]) => (
-              <tr key={questionKey}>
-                <td>{questionKey}</td>
-                <td>{responseKey}</td>
-                <td>{responseTags}</td>
-              </tr>
-            )
-          )}
+          {Object.entries(userResponses).map(([questionKey, response]) => (
+            <tr key={questionKey}>
+              <td>{questionKey}</td>
+              <td>
+                {/* Handle different response formats */}
+                {response.responseKey && <span>{response.responseKey}</span>}
+                {response.textInputValue && (
+                  <span>{response.textInputValue}</span>
+                )}
+                {response.imageURL && (
+                  <img src={response.imageURL} alt="Response" />
+                )}
+              </td>
+              <td>
+                {response.responseTags &&
+                  response.responseTags.map((tag, index) => (
+                    <span key={index}>{tag}</span>
+                  ))}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
-
-      {/* <h2>Tags</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Tag</th>
-          </tr>
-        </thead>
-        {Object.entries(userResponses).map(
-          ([questionKey, { responseTags }]) => (
-            <tbody>
-              {responseTags.map((tag, index) => (
-                <tr key={index}>
-                  <td>{tag}</td>
-                </tr>
-              ))}
-            </tbody>
-          )
-        )}
-      </table> */}
     </div>
   );
 }

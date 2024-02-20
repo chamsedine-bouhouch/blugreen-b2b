@@ -203,7 +203,6 @@ function Quizz() {
         const data = await response.json();
         setJsonData(data);
         setLoading(false);
-        // console.log(jsonData.[4][1].children);
       } catch (error) {
         console.error("Error fetching JSON data: ", error);
         setLoading(false);
@@ -213,41 +212,82 @@ function Quizz() {
     fetchData();
   }, []);
 
+  if (!jsonData) {
+    return <p>Loading...</p>;
+  }
+
+  const totalQuestions = jsonData.length;
   const handleNextQuestion = () => {
-    if (userResponses[jsonData[currentQuestionIndex].key]) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    const currentQuestion = jsonData[currentQuestionIndex]; // retrieving the current question from jsonData using the question index
+    const currentQuestionKey = currentQuestion.key; //extracting the key of the current question
+    const selectedResponse = userResponses[currentQuestionKey]; //retrieving the selected response from userresonses using the question key
+
+    if (selectedResponse || jsonData[currentQuestionIndex].type === "text") {
+      // si la reponse est de type text
+      let nextQuestionIndex = currentQuestionIndex + 1;
+
+      setCurrentQuestionIndex(nextQuestionIndex);
+      setSelectedCard(null); // Reset the selected card
     } else {
-      alert("Please select a response");
+      alert("Please select a response before moving to the next question");
+    }
+  };
+
+  const handlePreviousQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      //checks if there's a previous question
+      setCurrentQuestionIndex(currentQuestionIndex - 1); //move to the previous question
+
+      const prevQuestionKey = jsonData[currentQuestionIndex - 1].key; // retrieve the previoous question key
+      setUserResponses((prevResponses) => {
+        const updatedResponses = { ...prevResponses }; //deleting the previous question response
+        delete updatedResponses[prevQuestionKey];
+        return updatedResponses;
+      });
+
+      setSelectedCard(null); // Reset selected card
     }
   };
 
   const handleResponseChange = (
-    responseKey,
-    responseTags,
+    responseKey, // it could be null if it's a text field
+    responseTags, // it could be null if it's a text field
     hasChildren,
-    event
+    event, // stopping the child event to the parent component or the document level
+    textInputValue // New parameter for text input value
   ) => {
     if (event) {
       event.stopPropagation(); // Stop event propagation
     }
 
-    const questionKey = jsonData[currentQuestionIndex].key;
-    setUserResponses({
-      ...userResponses,
-      [questionKey]: { responseKey, responseTags, hasChildren },
-    });
-    setSelectedCard(responseKey);
+    const questionKey = jsonData[currentQuestionIndex].key; //retrieve the question key
+    if (responseKey !== null) {
+      //it's not a text field
+      setUserResponses({
+        // merging the userresponses with the new response
+        ...userResponses,
+        [questionKey]: { responseKey, responseTags, hasChildren },
+      });
+      setSelectedCard(responseKey); //visualize the selection
+    } else {
+      setUserResponses({
+        ...userResponses,
+        [questionKey]: { textInputValue }, // update the userresponses with the new input value
+      });
+    }
   };
 
   const handleSubmitQuiz = () => {
     const answeredQuestions = Object.keys(userResponses).length;
-    if (answeredQuestions === jsonData.length) {
+    if (answeredQuestions === totalQuestions) {
+      //checks if the user has answered all the questions
       setQuizSubmitted(true);
       navigate("/quiz-result", { state: { userResponses: userResponses } });
     } else {
       alert("Please answer all questions before submitting.");
     }
   };
+  const progress = (currentQuestionIndex / totalQuestions) * 100;
 
   return (
     <div className="container">
@@ -255,12 +295,19 @@ function Quizz() {
         <p>Loading...</p>
       ) : (
         <div>
+          <div className="progress-bar-container">
+            <div
+              className="progress-bar"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
           {!quizSubmitted && currentQuestionIndex < jsonData.length && (
             <div className="question">
               <h2>
                 {jsonData[currentQuestionIndex].key}:{" "}
                 {jsonData[currentQuestionIndex].text.en}
               </h2>
+
               <div className="answers">
                 {jsonData[currentQuestionIndex].answers.map((answer) => (
                   <div
@@ -272,13 +319,15 @@ function Quizz() {
                       handleResponseChange(
                         answer.key,
                         answer.tags,
-                        answer.children
+                        answer.children,
+                        null, // Pass null for event parameter
+                        null // Pass null for text input value initially
                       )
                     }
                   >
                     <div className="card-content">
                       <input
-                        type="radio"
+                        type="checkbox"
                         id={answer.id}
                         name={jsonData[currentQuestionIndex].key}
                         value={answer.key}
@@ -303,13 +352,14 @@ function Quizz() {
                                 child.key,
                                 child.tags,
                                 child.children,
-                                event
+                                event,
+                                null // Pass null for text input value initially
                               )
                             }
                           >
                             <div className="card-content">
                               <input
-                                type="radio"
+                                type="checkbox"
                                 id={child.id}
                                 name={jsonData[currentQuestionIndex].key}
                                 value={child.key}
@@ -331,13 +381,41 @@ function Quizz() {
                     )}
                   </div>
                 ))}
+
+                <div className="card">
+                  <div className="card-content">
+                    <input
+                      type="text"
+                      placeholder="Enter your response"
+                      value={
+                        userResponses[jsonData[currentQuestionIndex].key]
+                          ?.textInputValue || ""
+                      }
+                      onChange={(e) =>
+                        handleResponseChange(
+                          null, //responseKey since it's a text input
+                          null, //  responseTags since it's a text input
+                          null, //  event parameter
+                          null,
+                          e.target.value // text input value
+                        )
+                      }
+                      key={`text-input-${jsonData[currentQuestionIndex].key}`} // Unique key for text input
+                    />
+                  </div>
+                </div>
               </div>
 
-              {currentQuestionIndex === jsonData.length - 1 ? (
-                <button onClick={handleSubmitQuiz}>Submit Quiz</button>
-              ) : (
-                <button onClick={handleNextQuestion}>Next</button>
-              )}
+              <div>
+                {currentQuestionIndex > 0 && (
+                  <button onClick={handlePreviousQuestion}>Back</button>
+                )}
+                {currentQuestionIndex === jsonData.length - 1 ? (
+                  <button onClick={handleSubmitQuiz}>Submit Quiz</button>
+                ) : (
+                  <button onClick={handleNextQuestion}>Next</button>
+                )}
+              </div>
             </div>
           )}
         </div>
