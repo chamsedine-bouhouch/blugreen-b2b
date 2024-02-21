@@ -31,16 +31,14 @@ body {
   padding: 10px;
   margin-bottom: 10px;
   cursor: pointer;
-  transition: border-color 0.3s ease, background-color 0.3s ease; /* Add transition for background-color */
-}
+  transition: border-color 0.3s ease, background-color 0.3s ease; }
 
 .card:hover {
   border-color: #007bff;
 }
 
 .card.selected {
-  background-color: rgb(110, 182, 110); /* Change background color for selected card */
- 
+  background-color: rgb(110, 182, 110); 
 }
 
 .card-label {
@@ -53,10 +51,16 @@ body {
   align-items: center;
 }
 
-.card-content input[type="radio"] {
+.card-content input[type="checkbox"] {
   margin-right: 10px;
   display: none; 
 }
+
+.card-content img {
+  max-width: 50px;
+  margin-left: 50%; 
+}
+
 .progress-bar-container {
   width: 25%;
   height: 15px;
@@ -71,6 +75,7 @@ body {
   border-radius: 10px;
   transition: width 1s ease;
 }
+
 .card-content input[type="text"] {
   width: 100%;
   padding: 12px 15px;
@@ -82,13 +87,13 @@ body {
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-
 .card-content input[type="text"]:focus {
   outline: none;
   border-color: #007bff;
   background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);}
-  
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 button {
   background-color: rgb(39, 152, 39);
   border: none;
@@ -104,4 +109,14 @@ button {
 
 button:hover {
   background-color: rgb(24, 90, 24);
+}
+.child-container {
+  border: 1px solid #ccc; /* Border for the container */
+  margin-bottom: 10px; /* Add some margin between containers */
+  padding: 10px; /* Add padding inside the container */
+}
+
+.child-container-header {
+  font-weight: bold; /* Make the header text bold */
+  margin-bottom: 5px; /* Add some margin below the header */
 }

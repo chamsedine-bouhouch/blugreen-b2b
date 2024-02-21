@@ -21,22 +21,26 @@ function QuizResult() {
             <tr key={questionKey}>
               <td>{questionKey}</td>
               <td>
-                {response.responseKeys && response.responseKeys.length === 1 ? (
-                  response.responseKeys[0]
+                {response.textInputValue ? (
+                  response.textInputValue
                 ) : (
-                  <table>
-                    <tbody>
-                      {response.responseKeys &&
-                        response.responseKeys.map((key, index) => (
-                          <tr key={index}>
-                            <td>{key}</td>
-                          </tr>
-                        ))}
-                    </tbody>
-                  </table>
-                )}
-                {response.textInputValue && (
-                  <span>{response.textInputValue}</span>
+                  <React.Fragment>
+                    {response.responseKeys &&
+                    response.responseKeys.length === 1 ? (
+                      response.responseKeys[0]
+                    ) : (
+                      <table>
+                        <tbody>
+                          {response.responseKeys &&
+                            response.responseKeys.map((key, index) => (
+                              <tr key={index}>
+                                <td>{key}</td>
+                              </tr>
+                            ))}
+                        </tbody>
+                      </table>
+                    )}
+                  </React.Fragment>
                 )}
               </td>
               <td>

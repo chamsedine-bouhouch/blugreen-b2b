@@ -63,7 +63,7 @@
             "fr": "Comment décririez-vous votre type de peau?"
         },
         "type": "TEXT",
-        "numberOfAllowedAnswers": 1,
+        "numberOfAllowedAnswers": 2,
         "answers": [
             {
                 "id": "A1",
@@ -142,7 +142,7 @@
             "fr": "Évaluation du niveau d'hydratation"
         },
         "type": "TEXT_IMAGE",
-        "numberOfAllowedAnswers": 1,
+        "numberOfAllowedAnswers": 2,
         "answers": [
             {
                 "id": "A1",
@@ -159,6 +159,7 @@
             {
                 "id": "A2",
                 "key": "SKIN_DEHYDRATION",
+                "name":"Skin Dehydration",
                 "children": [
                     {
                         "id": "A21",
@@ -167,7 +168,7 @@
                             "en": "Mild Dehydration",
                             "fr": "Déshydratation légère"
                         },
-                        "image": "https: //picsum.photos/200/300",
+                        "image": "https://picsum.photos/200/300",
                         "tags": [
                             "MILD_DEHYDRATION"
                         ]
@@ -222,11 +223,7 @@
         "type": "TEXT_INPUT",
         "numberOfAllowedAnswers": 1,
         "answers": [
-            {
-                "id": "A1",
-                "key": "SUNSCREEN_FREQUENCY",
-                "tags": []
-            }
+          
         ]
     }
     

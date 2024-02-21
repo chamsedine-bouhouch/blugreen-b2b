@@ -55,10 +55,9 @@ function Quizz() {
       alert("Please select a response before moving to the next question");
     }
   };
-
   const handlePreviousQuestion = () => {
     if (currentQuestionIndex > 0) {
-      let prevQuestionIndex = currentQuestionIndex - 1; // Default previous question index
+      let prevQuestionIndex = currentQuestionIndex - 1;
 
       if (
         currentQuestionIndex === 4 &&
@@ -71,7 +70,6 @@ function Quizz() {
 
       setCurrentQuestionIndex(prevQuestionIndex);
 
-      // Reset user response for the current question
       const prevQuestionKey = jsonData[currentQuestionIndex].key;
       setUserResponses((prevResponses) => {
         const updatedResponses = { ...prevResponses };
@@ -88,37 +86,62 @@ function Quizz() {
     event,
     textInputValue
   ) => {
+    // Prevent event propagation if this is called within a click event
     if (event) {
       event.stopPropagation();
     }
 
-    const questionKey = jsonData[currentQuestionIndex].key;
+    const currentQuestion = jsonData[currentQuestionIndex];
+    const questionKey = currentQuestion.key;
 
-    let updatedResponseKeys = [];
-    let updatedResponseTags = []; // Initialize array to store tags
+    // Update logic for handling responses, including text input
+    let updatedUserResponses = { ...userResponses };
 
-    if (userResponses[questionKey]?.responseKeys) {
-      updatedResponseKeys = [...userResponses[questionKey].responseKeys];
-      updatedResponseTags = [...userResponses[questionKey].responseTags]; // Copy existing tags
-    }
-
-    const index = updatedResponseKeys.indexOf(responseKey);
-    if (index !== -1) {
-      updatedResponseKeys.splice(index, 1);
-      updatedResponseTags.splice(index, 1); // Remove tag if removing response
+    if (currentQuestion.type === "TEXT_INPUT") {
+      updatedUserResponses[questionKey] = {
+        ...updatedUserResponses[questionKey],
+        textInputValue: textInputValue,
+        responseKeys: textInputValue ? [questionKey] : [], // Mark as answered if text input is not empty
+        responseTags: textInputValue ? [responseTags] : [],
+      };
     } else {
-      updatedResponseKeys.push(responseKey);
-      updatedResponseTags.push(responseTags); // Push tag if adding response
+      // For non-text input questions, toggle selections
+      let updatedResponseKeys =
+        updatedUserResponses[questionKey]?.responseKeys || [];
+      let updatedResponseTags =
+        updatedUserResponses[questionKey]?.responseTags || [];
+      const index = updatedResponseKeys.indexOf(responseKey);
+
+      if (index !== -1) {
+        // Response is already selected, unselect it
+        updatedResponseKeys.splice(index, 1);
+        updatedResponseTags.splice(index, 1);
+      } else {
+        // Check if the number of allowed answers has been reached
+        if (
+          updatedResponseKeys.length < currentQuestion.numberOfAllowedAnswers
+        ) {
+          // Response is not selected, select it
+          updatedResponseKeys.push(responseKey);
+          updatedResponseTags.push(responseTags);
+        } else {
+          // Alert the user that they have reached the maximum allowed answers
+          alert(
+            `You can only select ${currentQuestion.numberOfAllowedAnswers} answers for this question.`
+          );
+          return; // Return here to prevent further execution
+        }
+      }
+
+      updatedUserResponses[questionKey] = {
+        ...updatedUserResponses[questionKey],
+        responseKeys: updatedResponseKeys,
+        responseTags: updatedResponseTags,
+        hasChildren,
+      };
     }
 
-    setUserResponses({
-      ...userResponses,
-      [questionKey]: {
-        responseKeys: updatedResponseKeys,
-        responseTags: updatedResponseTags, // Set updated tags array
-        hasChildren,
-      },
-    });
+    setUserResponses(updatedUserResponses);
   };
 
   const handleSubmitQuiz = () => {
@@ -158,48 +181,64 @@ function Quizz() {
               </h2>
 
               <div className="answers">
-                {jsonData[currentQuestionIndex].answers.map((answer) => (
-                  <div
-                    key={answer.id}
-                    className={`card ${
-                      userResponses[
-                        jsonData[currentQuestionIndex].key
-                      ]?.responseKeys.includes(answer.key)
-                        ? "selected"
-                        : ""
-                    }`}
-                    onClick={() =>
-                      handleResponseChange(
-                        answer.key,
-                        answer.tags,
-                        answer.children,
-                        null, // Pass null for event parameter
-                        null // Pass null for text input value initially
-                      )
-                    }
-                  >
-                    <div className="card-content">
-                      <input
-                        type="checkbox"
-                        id={answer.id}
-                        name={jsonData[currentQuestionIndex].key}
-                        value={answer.key}
-                        defaultChecked={false}
-                        style={{ display: "none" }}
-                      />
-                      {answer && answer.text && (
-                        <label htmlFor={answer.id}>{answer.text.en}</label>
-                      )}
-                    </div>
-                    {answer.children && (
+                {jsonData[currentQuestionIndex].answers.map(
+                  (answer) =>
+                    // Render only if the answer has no children
+                    !answer.children && (
+                      <div
+                        key={answer.id}
+                        className={`card ${
+                          userResponses[
+                            jsonData[currentQuestionIndex].key
+                          ]?.responseKeys?.includes(answer.key)
+                            ? "selected"
+                            : ""
+                        }`}
+                        onClick={() =>
+                          handleResponseChange(
+                            answer.key,
+                            answer.tags,
+                            !!answer.children,
+                            null,
+                            null
+                          )
+                        }
+                      >
+                        <div className="card-content">
+                          <input
+                            type="checkbox"
+                            id={answer.id}
+                            name={jsonData[currentQuestionIndex].key}
+                            value={answer.key}
+                            style={{ display: "none" }}
+                          />
+                          {answer.text && (
+                            <>
+                              <label htmlFor={answer.id}>
+                                {answer.text.en}
+                              </label>
+                              {answer.image && (
+                                <img src={answer.image} alt={answer.text.en} />
+                              )}
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    )
+                )}
+                {jsonData[currentQuestionIndex].answers.map(
+                  (answer) =>
+                    // Render only if the answer has children
+                    answer.children && (
                       <div className="child-container">
+                        {answer.name}
                         {answer.children.map((child) => (
                           <div
                             key={child.id}
                             className={`card ${
                               userResponses[
                                 jsonData[currentQuestionIndex].key
-                              ]?.responseKeys.includes(child.key)
+                              ]?.responseKeys?.includes(child.key)
                                 ? "selected"
                                 : ""
                             }`}
@@ -207,9 +246,9 @@ function Quizz() {
                               handleResponseChange(
                                 child.key,
                                 child.tags,
-                                child.children,
+                                !!child.children,
                                 event,
-                                null // Pass null for text input value initially
+                                null
                               )
                             }
                           >
@@ -219,26 +258,24 @@ function Quizz() {
                                 id={child.id}
                                 name={jsonData[currentQuestionIndex].key}
                                 value={child.key}
-                                defaultChecked={false}
                                 style={{ display: "none" }}
                               />
-                              {child && child.text && (
-                                <label
-                                  htmlFor={child.id}
-                                  className="card-label"
-                                >
+                              <div className="card-content">
+                                <label htmlFor={child.id}>
                                   {child.text.en}
                                 </label>
-                              )}
+                                {child.image && (
+                                  <img src={child.image} alt={child.text.en} />
+                                )}
+                              </div>
                             </div>
                           </div>
-                        ))}
+                        ))}{" "}
                       </div>
-                    )}
-                  </div>
-                ))}
+                    )
+                )}
 
-                <div className="card">
+                {jsonData[currentQuestionIndex].type === "TEXT_INPUT" && (
                   <div className="card-content">
                     <input
                       type="text"
@@ -249,27 +286,26 @@ function Quizz() {
                       }
                       onChange={(e) =>
                         handleResponseChange(
-                          null, //responseKey since it's a text input
-                          null, //  responseTags since it's a text input
-                          null, //  event parameter
+                          jsonData[currentQuestionIndex].key,
+                          [],
+                          false,
                           null,
-                          e.target.value // text input value
+                          e.target.value
                         )
                       }
-                      key={`text-input-${jsonData[currentQuestionIndex].key}`} // Unique key for text input
                     />
                   </div>
-                </div>
+                )}
               </div>
 
               <div>
                 {currentQuestionIndex > 0 && (
                   <button onClick={handlePreviousQuestion}>Back</button>
                 )}
-                {currentQuestionIndex === jsonData.length - 1 ? (
-                  <button onClick={handleSubmitQuiz}>Submit Quiz</button>
-                ) : (
+                {currentQuestionIndex < jsonData.length - 1 ? (
                   <button onClick={handleNextQuestion}>Next</button>
+                ) : (
+                  <button onClick={handleSubmitQuiz}>Submit Quiz</button>
                 )}
               </div>
             </div>
