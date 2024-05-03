@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import Quizz from "./pages/quizz";
 import QuizResult from "./pages/QuizResult";
+import Register from "./pages/Auth/Register";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/quiz-result",
     element: <QuizResult />,
+  },
+  {
+    path: "/Register",
+    element: <Register />,
   },
 ]);
 

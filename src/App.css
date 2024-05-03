@@ -1,59 +1,378 @@
-
-.menu {
+.app-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  min-height: 140vh; 
+  min-width: 90vh;
+  }
+
+.content {
+  flex: 1; 
+  margin-top: 4rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  
+
+}
+.DiagnosticContainer {
+  
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
-}
-.navbar {
-  justify-content: center;
-  display: flex;
+  margin-right: 5rem;
+  margin-left: 5rem;
+  flex-direction: row;
 
 }
-.menu-item{ 
-  list-style: none;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 18px;
+.accueilTitle {
+  font-size: 40px; 
+  color: var(--blue);
+  text-align: center;
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  margin-top: 50px;
+.DiagnosticTitle {
+  font-size: 40px; 
+  color: var(--blue);
+}
+.DiagnosticDescription {
+  font-size: 20px; 
+  color: "#272833";
+  width: 350px;
+  margin-top: 2rem;
+margin-bottom: 1rem;
+}
+.DiagnosticContainer button {
+  background-color:  var(--orange);
+  border-radius: 4;
+  padding-left:2.5rem ;
+  padding-right:2.5rem ;
 
 }
-.container {
-  display: flex;
-  flex-direction: column;
+.TextAcceuilContainer{
   justify-content: center;
   align-items: center;
-  width: 1000px;
-  
+ text-align: center;
+ margin-top: 6rem;
 }
-.form input{
-  margin-top: 20px;
- padding: 10px;
-}
-.text{
-  font-size: 30px;
-  font-weight: bold;
-  justify-self: center;
-  margin-top: 10%;
-}
-.container-button{
-  display: flex;
-  justify-content: center;
-}
-.button{
-  background-color: rgb(39, 152, 39);
-  border: none;
-  color: white;
-  padding: 13px 30px;
+.AccueilDescription{
+  font-size: 24;
   text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-top:1rem;
+  color: "#272533";
+
+
+}
+.carousel-image{
+  width: 57%; 
+  height: auto; 
+}
+
+.box-image-container {
+  width: 555px; 
+  height: 575px; 
+  overflow: hidden; 
+}
+
+.expert-image-container {
+  width: 555px; 
+  height: 250px; 
+  overflow: hidden; 
+}
+.article-image-container {
+  width: 265px; 
+  height: 180px; 
+  overflow: hidden; 
+}
+
+.ExpertDescription{
+  font-size: 14px; 
+  color: "#272833";
+  width: 400px;
+  margin-top: 0.5rem;
+margin-bottom: 0.5rem;
+}
+.articleDescription{
+  font-size: 14px; 
+  color: "#272833";
+  width: 180px;
+margin-bottom: 0.5rem;
+}
+.articleTitle{
+  font-size: 14px; 
+
+  width: 180px;
+margin-bottom: 0.5rem;
+margin-top: 0.5rem;
+
+}
+.icon{
+margin-bottom: 1rem;
+} 
+.box-image {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+.MoodContainer{
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding-left: 7rem;
+  padding-right: 5rem;
+  padding-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+
+}
+.text-box-container{
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+}
+.expert-text-container{ 
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.BoxContainer{
+  align-items: flex-start;
+  justify-content: flex-start;
+padding-bottom: 1rem; 
+box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+margin-bottom: 1rem;}
+.ExpertContainer{
+  align-items: flex-start;
+  justify-content: flex-start;
+box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+padding-bottom: 0.5rem;
+margin-bottom: 1rem;
+margin-left: 1.5rem;
+}
+.ArticleContainer{
+  align-items: flex-start;
+  justify-content: flex-start;
+box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+padding-bottom: 0.5rem;
+margin-bottom: 1rem;
+margin-left: 1.5rem;
+}
+
+.SecondColumnContainer{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 1rem;
+
+
+}
+.SmallContainer{
+  display: flex;
+  flex-direction: row;
+
+}
+.icons-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+  .icon-container{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    }
+    .prod-container {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      margin-top: 2rem;
+      padding-left: 1rem; 
+      padding-right: 2rem;
+      margin-bottom: 3rem;
+
+    }
+    
+
+
+@media screen and (max-width : 1024px){
+
+  .DiagnosticTitle {
+    font-size: 24px; 
+    color: "#272833";
+    text-align: center;
+
+  }
+  .DiagnosticDescription {
+    font-size: 20px; 
+    color: "#272833";
+    margin-top: 1rem;
+  text-align: center;
+  }
+  .DiagnosticContainer button {
+    padding-left:1rem ;
+    padding-right:1rem ;
+    margin-top: 0rem;
+margin-left: 8rem;
+ 
+  }
+
+  .DiagnosticContainer  {
+    margin-right: 1rem;
+    margin-left: 1rem;
+   flex-direction: column;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+  }
+  .MoodContainer{
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-left: 5rem;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+  
+  
+  }
+  .prod-container {
+    margin-left: 0; /* Adjust margin as needed */
+    margin-top: 1rem; /* Adjust margin as needed */
+    padding-left: 0; /* Adjust padding as needed */
+    padding-right: 0; /* Adjust padding as needed */
+  }
+  .SecondColumnContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 0rem;
+  
+  }
+  .ExpertContainer{
+    align-items: flex-start;
+    justify-content: flex-start;
+  box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  }
+  .ArticleContainer{
+    align-items: flex-start;
+    justify-content: flex-start;
+  box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  }
+  .icons-container {
+    margin-right: 0;
+    margin-bottom: 2rem; /* Adjust margin as needed */
+  }
+
+
+}
+.separator-line {
+  margin-top: 4rem; 
+  border-top: 3px solid var(--grey); 
+  width: 20%;
+  margin-bottom: 3rem; 
+
+}
+
+
+@media screen and (max-width : 550px){
+ 
+  .DiagnosticTitle {
+    font-size: 24px; 
+    color: "#272833";
+    text-align: center;
+  }
+  .DiagnosticDescription {
+    font-size: 20px; 
+    color: "#272833";
+    margin-top: 1rem;
+    text-align: center;
+
+  }
+  .DiagnosticContainer button {
+    padding-left:1rem ;
+    padding-right:1rem ;
+    margin-bottom: 1rem;
+align-items: center;
+margin-left: 8rem;
+
+
+  }
+  .DiagnosticContainer  {
+    margin-right: 1rem;
+    margin-left: 1rem;
+   flex-direction: column;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+  }
+  .MoodContainer{
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-left: 5rem;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+  
+  
+  }
+  .SecondColumnContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 0rem;
+  
+  }
+  .ExpertContainer{
+    align-items: flex-start;
+    justify-content: flex-start;
+  box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  }
+  .ArticleContainer{
+    align-items: flex-start;
+    justify-content: flex-start;
+  box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  }
+  .prod-container {
+    margin-left: 0; /* Adjust margin as needed */
+    margin-top: 1rem; /* Adjust margin as needed */
+    padding-left: 0; /* Adjust padding as needed */
+    padding-right: 0; /* Adjust padding as needed */
+  }
+  .icons-container {
+    margin-right: 0;
+    margin-bottom: 2rem; /* Adjust margin as needed */
+  }
+
 
 }

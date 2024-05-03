@@ -1,0 +1,43 @@
+.container {
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  
+  .InputTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .InputText {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 14px;
+
+
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  input::placeholder {
+    color:var(--grey);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--bleuCiel);
+  }
+  
