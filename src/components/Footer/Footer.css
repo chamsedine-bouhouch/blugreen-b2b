@@ -61,6 +61,7 @@
     padding: 10px;
     margin-right: -1px;
     border: 0;
+
   }
   
   .newsletter input[type="email"]::placeholder {
@@ -71,10 +72,10 @@
     background-color:var(--orange);
     color: #fff;
     border: none;
-    padding: 8.5px 16px;
+    padding:10px 16px;
     cursor: pointer;
     border-radius: 0;
-    margin-top: 0;
+    margin-top: 10px;
     margin: 0   ;
 
   }
@@ -88,11 +89,23 @@
       width: 25%; 
       margin: 0.5rem 0; 
     }
+    .newsletter button {
+     
+      margin-top: 0px;
+  
+    }
   }
   
   @media screen and (max-width: 550px) {
     .sb_footer-links_div  .sb_footer-links_div1 {
       width: 50%;
       margin: 0.5rem 0;
+    }
+    .newsletter button {
+      
+
+     
+      margin-top: 0px;
+  
     }
   }

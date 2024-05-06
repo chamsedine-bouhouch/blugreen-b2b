@@ -93,7 +93,7 @@
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-button {
+.quizz button {
   background-color: rgb(39, 152, 39);
   border: none;
   color: white;
@@ -106,7 +106,7 @@ button {
   margin-top: 25px;
 }
 
-button:hover {
+.quizz button:hover {
   background-color: rgb(24, 90, 24);
 }
 .child-container {

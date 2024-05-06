@@ -1,0 +1,26 @@
+.ReviewContainer{
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.ReviewTitle{
+font-size: 20px;
+color: var(--blue);
+}
+.ReviewDate{
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    color: var(--grey);
+
+}
+.ReviewText{
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+    width: 350px;
+    text-align: center;
+    color: #3F3F3F;
+    
+}

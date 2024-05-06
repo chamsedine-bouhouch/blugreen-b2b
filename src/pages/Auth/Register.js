@@ -1,97 +1,128 @@
-import "../../App.css";
 import React, { useState } from "react";
-import Button from "../../components/button";
-import Input from "../../components/input";
-import FormDataDisplay from "../../components/DataDisplay";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
 
-const form = [
-  [
-    "Nom",
-    "Prénom",
-    "Mail",
-    "Mot de passe",
-    "Code de parrainage",
-    "Numéro de téléphone",
-  ],
-];
+import "./Auth.css";
+import ImageAuth from "../../Images/imageAuth3.png";
 
-function Register() {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [inputData, setInputData] = useState({});
-  const [formDataArray, setFormDataArray] = useState([]);
+const Register = () => {
+  const [formData, setFormData] = useState({
+    nom: "",
+    prenom: "",
+    email: "",
+    password: "",
+    codeParrainage: "",
+  });
 
-  const handleInputChange = (event, inputName) => {
-    setInputData({
-      ...inputData,
-      [inputName]: event.target.value,
+  const { nom, prenom, email, password, codeParrainage } = formData;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
     });
   };
 
-  const handleNextStep = () => {
-    if (currentStep === 0) {
-      setFormDataArray([...formDataArray, inputData]);
-    } else {
-      setFormDataArray((prevDataArray) => {
-        const updatedDataArray = [...prevDataArray];
-        updatedDataArray[updatedDataArray.length - 1] = {
-          ...updatedDataArray,
-          ...inputData,
-        };
-        return updatedDataArray;
-      });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (nom === "" || prenom === "" || email === "" || password === "") {
+      alert("Veuillez remplir tous les champs obligatoires.");
+      return;
     }
-    setCurrentStep(currentStep + 1);
-    setInputData({});
-  };
-
-  const handleSubmit = () => {
-    if (currentStep === 0) {
-      setFormDataArray([...formDataArray, inputData]);
-    } else {
-      setFormDataArray((prevDataArray) => {
-        const updatedDataArray = [...prevDataArray];
-        updatedDataArray[updatedDataArray.length - 1] = {
-          ...updatedDataArray[updatedDataArray.length - 1],
-          ...inputData,
-        };
-        return updatedDataArray;
-      });
-    }
-    setCurrentStep(form.length);
-    setInputData({});
+    console.log(formData);
   };
 
   return (
-    <div className="app-container">
-      <Navbar />
-      <div className="content">
-        <Input
-          form={form[currentStep]}
-          inputData={inputData}
-          onInputChange={handleInputChange}
-        />
-        {/* {currentStep === form.length - 1 ? (
-          <Button
-            onClick={() => {
-              handleSubmit();
-              setCurrentStep(0);
-            }}
-            label="Sign In"
-          />
-        ) : (
-          <Button onClick={handleNextStep} label="Next" />
-        )} */}
+    <div className="login-container">
+      <div className="content-container">
+        <div className="combined-row">
+          <div className="left-col">
+            <img src={ImageAuth} className="ImageAuth" alt="Logo" />
+          </div>
+          <div className="right-col">
+            <div className="welcome-text poppins-semibold">
+              Bienvenue chez BluGreen
+            </div>
 
-        {formDataArray.length > 0 && (
-          <FormDataDisplay formDataArray={formDataArray} />
-        )}
+            <form className="login-form" onSubmit={handleSubmit}>
+              <div className="input-line">
+                <input
+                  type="text"
+                  name="nom"
+                  value={nom}
+                  onChange={handleChange}
+                  className="input-field poppins-medium"
+                  placeholder="Nom"
+                  required
+                />
+              </div>
+              <div className="input-line">
+                <input
+                  type="text"
+                  name="prenom"
+                  value={prenom}
+                  onChange={handleChange}
+                  className="input-field poppins-medium"
+                  placeholder="Prénom"
+                  required
+                />
+              </div>
+              <div className="input-line">
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                  className="input-field poppins-medium"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div className="input-line">
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                  className="input-field poppins-medium"
+                  placeholder="Mot de passe"
+                  required
+                />
+                <input
+                  type="number"
+                  name="codeParrainage"
+                  value={codeParrainage}
+                  onChange={handleChange}
+                  className="input-field poppins-medium"
+                  placeholder="Code de parrainage"
+                />
+              </div>
+
+              <div className="button-container">
+                <div className="login-button">
+                  <Link to="/">
+                    <button
+                      type="submit"
+                      className="btn btn-primary poppins-medium"
+                      onClick={handleSubmit}
+                    >
+                      Créer un compte
+                    </button>
+                  </Link>
+                </div>
+                <div className="create-account poppins-medium">
+                  Déjà membre?
+                  <Link to="/login" className="link poppins-medium">
+                    Se connecter
+                  </Link>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-
-      <Footer />
     </div>
   );
-}
+};
 
 export default Register;

@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   min-height: 140vh; 
-  min-width: 90vh;
+  min-width: 91vh;
+  margin-right: 0 !important;
+
   }
 
 .content {
@@ -34,8 +36,8 @@
 }
 .DiagnosticDescription {
   font-size: 20px; 
-  color: "#272833";
-  width: 350px;
+  color: #3F3F3F;
+  width:400px;
   margin-top: 2rem;
 margin-bottom: 1rem;
 }
@@ -44,6 +46,39 @@ margin-bottom: 1rem;
   border-radius: 4;
   padding-left:2.5rem ;
   padding-right:2.5rem ;
+  border: none;
+  color: white;
+  padding: 13px 30px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 25px;
+
+}
+.IconsButton{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 5rem;
+  margin-left: 5rem;
+  flex-direction: column;
+}
+.IconsButton button {
+  background-color:  var(--orange);
+  border-radius: 4;
+  padding-left:2.5rem ;
+  padding-right:2.5rem ;
+  border: none;
+  color: white;
+  padding: 13px 30px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 25px;
 
 }
 .TextAcceuilContainer{
@@ -58,18 +93,22 @@ margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
   margin-top:1rem;
-  color: "#272533";
+  color: #3F3F3F;
 
 
 }
 .carousel-image{
-  width: 57%; 
+  width: 555px; 
   height: auto; 
+}
+.CarrouselContainer{
+  justify-content: center;
+  margin-right: 0px;
 }
 
 .box-image-container {
   width: 555px; 
-  height: 575px; 
+  height: 610px; 
   overflow: hidden; 
 }
 
@@ -86,14 +125,14 @@ margin-bottom: 1rem;
 
 .ExpertDescription{
   font-size: 14px; 
-  color: "#272833";
+  color: #3F3F3F;
   width: 400px;
   margin-top: 0.5rem;
 margin-bottom: 0.5rem;
 }
 .articleDescription{
   font-size: 14px; 
-  color: "#272833";
+  color: #3F3F3F;
   width: 180px;
 margin-bottom: 0.5rem;
 }
@@ -101,8 +140,8 @@ margin-bottom: 0.5rem;
   font-size: 14px; 
 
   width: 180px;
-margin-bottom: 0.5rem;
-margin-top: 0.5rem;
+margin-bottom: 2rem;
+margin-top: 1rem;
 
 }
 .icon{
@@ -119,7 +158,7 @@ margin-bottom: 1rem;
   align-items: center;
   justify-content:space-between;
   padding-left: 7rem;
-  padding-right: 5rem;
+  /* padding-right: 5rem; */
   padding-top: 2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -183,52 +222,83 @@ margin-left: 1.5rem;
   display: flex;
   flex-wrap: wrap; 
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  align-items: baseline;
+
 }
 
   .icon-container{
-    text-align: center;
     justify-content: center;
     align-items: center;
+    display: flex;
+flex-direction: column;
+margin-top: 1rem;
+padding-right: 2rem;
+text-align: center;
+
     }
+    .iconTitle{
+      color: #3F3F3F;
+    }
+
     .prod-container {
       display: flex;
       flex-wrap: wrap; 
       justify-content: center;
-      margin-top: 2rem;
+      margin-top: 4rem;
       padding-left: 1rem; 
       padding-right: 2rem;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
 
     }
     
-
+    .DiagnosticText{
+      justify-content: center;
+      align-items: center ;
+    
+    }
 
 @media screen and (max-width : 1024px){
 
   .DiagnosticTitle {
     font-size: 24px; 
-    color: "#272833";
+    color: #3F3F3F;
     text-align: center;
 
   }
+  .content {
+    flex: 1; 
+    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
+  
+  }
   .DiagnosticDescription {
     font-size: 20px; 
-    color: "#272833";
+    color: #3F3F3F;
     margin-top: 1rem;
   text-align: center;
   }
   .DiagnosticContainer button {
-    padding-left:1rem ;
-    padding-right:1rem ;
-    margin-top: 0rem;
-margin-left: 8rem;
- 
+    padding-left:2rem ;
+    padding-right:2rem ;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+align-self: center; 
+  }
+  .DiagnosticText{
+    justify-content: center;
+    align-items: center ;
+    display: flex;
+flex-direction: column;
   }
 
   .DiagnosticContainer  {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    /* margin-right: 1rem;
+    margin-left: 1rem; */
    flex-direction: column;
    display: flex;
    align-items: center;
@@ -239,7 +309,7 @@ margin-left: 8rem;
     display: flex;
     align-items: center;
     justify-content:space-between;
-    padding-left: 5rem;
+    /* padding-left: 5rem; */
     padding-top: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -249,7 +319,7 @@ margin-left: 8rem;
   }
   .prod-container {
     margin-left: 0; /* Adjust margin as needed */
-    margin-top: 1rem; /* Adjust margin as needed */
+    margin-top: 5rem; /* Adjust margin as needed */
     padding-left: 0; /* Adjust padding as needed */
     padding-right: 0; /* Adjust padding as needed */
   }
@@ -279,10 +349,15 @@ margin-left: 8rem;
   margin-left: 0.5rem;
   }
   .icons-container {
-    margin-right: 0;
-    margin-bottom: 2rem; /* Adjust margin as needed */
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    
   }
-
+  .icon {
+    padding: 1rem;
+  }
+  
 
 }
 .separator-line {
@@ -293,44 +368,71 @@ margin-left: 8rem;
 
 }
 
+.separator-1{
+  margin-top: 4rem; 
+color: #3F3F3F;
+  height: 5rem;
+}
+
 
 @media screen and (max-width : 550px){
+
+
  
   .DiagnosticTitle {
     font-size: 24px; 
-    color: "#272833";
+    color: #3F3F3F;
     text-align: center;
   }
   .DiagnosticDescription {
     font-size: 20px; 
-    color: "#272833";
+    color: #3F3F3F;
     margin-top: 1rem;
     text-align: center;
 
   }
   .DiagnosticContainer button {
-    padding-left:1rem ;
-    padding-right:1rem ;
-    margin-bottom: 1rem;
+    padding-left:2rem ;
+    padding-right:2rem ;
+    margin-bottom: 2rem;
 align-items: center;
-margin-left: 8rem;
+/* margin-left: 8rem; */
 
 
   }
-  .DiagnosticContainer  {
-    margin-right: 1rem;
+  .separator-1{
+display: none;
+  }
+  
+  .DiagnosticText{
+    justify-content: center;
+    align-items: center ;
+    display: flex;
+flex-direction: column;
+  }
+  .content {
+    flex: 1; 
+    margin-top: 4rem;
     margin-left: 1rem;
+    margin-right: 1rem;
+    
+  
+  }
+  .DiagnosticContainer  {
+    margin-right: 0rem;
+    margin-left: 0rem;
    flex-direction: column;
    display: flex;
    align-items: center;
-   justify-content: space-between;
+   justify-content: center;
   }
+ 
   .MoodContainer{
     align-self: stretch;
     display: flex;
     align-items: center;
     justify-content:space-between;
-    padding-left: 5rem;
+      /* padding-left: 5rem; */
     padding-top: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -365,12 +467,12 @@ margin-left: 8rem;
   }
   .prod-container {
     margin-left: 0; /* Adjust margin as needed */
-    margin-top: 1rem; /* Adjust margin as needed */
+    margin-top: 5rem; /* Adjust margin as needed */
     padding-left: 0; /* Adjust padding as needed */
     padding-right: 0; /* Adjust padding as needed */
   }
   .icons-container {
-    margin-right: 0;
+    margin-right: 2.5rem;
     margin-bottom: 2rem; /* Adjust margin as needed */
   }
 

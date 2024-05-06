@@ -39,6 +39,7 @@ function App() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
+    arrows: false,
   };
 
   return (
@@ -50,7 +51,7 @@ function App() {
             <div className="DiagnosticContainer">
               <div className="DiagnosticText">
                 <div className="DiagnosticTitle poppins-semibold ">
-                  Diagnostique
+                  Diagnostic
                 </div>
                 <div className="DiagnosticDescription poppins-regular">
                   Découvrez des routines plus adaptées à vos besoins uniques

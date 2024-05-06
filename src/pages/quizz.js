@@ -298,7 +298,7 @@ function Quizz() {
                 )}
               </div>
 
-              <div>
+              <div className="quizz">
                 {currentQuestionIndex > 0 && (
                   <button onClick={handlePreviousQuestion}>Back</button>
                 )}

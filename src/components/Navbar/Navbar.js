@@ -45,11 +45,11 @@ function Navbar() {
       />
       <nav ref={navRef}>
         <div className="dropdown" onClick={toggleDropdown1}>
-          <a href="/#">Découvrez</a>
+          <a>Découvrez</a>
           {showDropdown1 && (
             <div className="dropdown-content column">
               <a
-                href="/quizz"
+                href="/discover"
                 style={{
                   color: "#167378",
                   marginBottom: "10px",
@@ -58,7 +58,7 @@ function Navbar() {
                 Notre diagnostique
               </a>
               <a
-                href="#"
+                href="/Boxes"
                 style={{
                   color: "#167378",
                 }}
@@ -69,7 +69,7 @@ function Navbar() {
           )}
         </div>
         <div className="dropdown" onClick={toggleDropdown2}>
-          <a href="/#">Produits</a>
+          <a>Produits</a>
           {showDropdown2 && (
             <div className="dropdown-content column">
               <a
@@ -138,7 +138,7 @@ function Navbar() {
           )}
         </div>
         <div className="dropdown" onClick={toggleDropdown3}>
-          <a href="/#">Conseils d'experts</a>
+          <a>Conseils d'experts</a>
           {showDropdown3 && (
             <div className="dropdown-content column">
               <a
@@ -162,7 +162,7 @@ function Navbar() {
           )}
         </div>
         <div className="dropdown" onClick={toggleDropdown4}>
-          <a href="/#">Communauté</a>
+          <a>Communauté</a>
           {showDropdown4 && (
             <div className="dropdown-content column">
               <a
@@ -198,7 +198,7 @@ function Navbar() {
           <a href="/quizz" className="diagnostique-link">
             Faites votre diagnostique
           </a>
-          <span className="icon-container">
+          <span className="icon-container1">
             <a>
               <BsPerson
                 style={{

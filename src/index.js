@@ -7,6 +7,11 @@ import App from "./App";
 import Quizz from "./pages/quizz";
 import QuizResult from "./pages/QuizResult";
 import Register from "./pages/Auth/Register";
+import Login from "./pages/Auth/Login";
+import NewPsd from "./pages/Auth/NewPassword";
+import ResetPassword from "./pages/Auth/ResetPsd";
+import Discover from "./pages/Discover/Discover.js";
+import BoxesPage from "./pages/Discover/BoxesPage.js";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +29,26 @@ const router = createBrowserRouter([
   {
     path: "/Register",
     element: <Register />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/psd",
+    element: <NewPsd />,
+  },
+  {
+    path: "/resetpsd",
+    element: <ResetPassword />,
+  },
+  {
+    path: "/discover",
+    element: <Discover />,
+  },
+  {
+    path: "/Boxes",
+    element: <BoxesPage />,
   },
 ]);
 
