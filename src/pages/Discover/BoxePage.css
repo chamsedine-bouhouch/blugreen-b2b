@@ -28,30 +28,61 @@
   
   }
   .BOXDescription{
-    /* color:white; */
+    color: #3F3F3F;
     width: 400px;
     margin-bottom: 1rem;
+    font-size: 16 px
+
   }
   .BoxTITLE{
-    /* color:white; */
+    color: #3F3F3F;
     margin-bottom: 2rem;
     margin-top: 1rem;
+    font-size: 36px
 
   }
   .NosBoxes{
-    /* background-color: var(--blue); */
     border-radius: 8px;
     padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-image: url('../../Images/freepik-export-202405061333223X9Y.jpeg');
+    background-size: cover;
+
   }
   .TextContainer{
     display: flex;
     flex-direction: column;
   }
-  /* .box-image{
-    width: 200px;
-    height: auto;
-  } */
+  /* Add this CSS to your BoxePage.css file */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  background-color: var(--orange);
+  color: white;
+  border:none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 16px;
+  margin: 0 10px;
+}

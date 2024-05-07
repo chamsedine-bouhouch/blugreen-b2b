@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import BoxComponent from "../../components/Box/Box";
 import product from "../../Images/selfcare-product-bottle-with-flower.jpg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import "./BoxePage.css";
 import ReviewComponent from "../../components/Review/ReviewComponent";
-import boximage from "../../Images/front-view-argan-product-assortment.jpg";
 const reviews = [
   {
     name: "Khawla Selmi",
@@ -28,8 +27,132 @@ const reviews = [
     text: "Grace au diagnostic je sais maintenant quel est mon type de peau. Je la pensais mixte mais en fait elle est grasse.",
   },
 ].slice(0, 3);
+const boxData = [
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+  {
+    imageSrc: product,
+    title: "Sérum cheveux",
+    description:
+      "Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance.",
+    price: "128DT",
+  },
+];
 
 const BoxesPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
+
+  // Calculate the index range for the current page
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = Math.min(startIndex + itemsPerPage, boxData.length);
+
+  // Get the current page's box data
+  const currentPageBoxData = boxData.slice(startIndex, endIndex);
+
   return (
     <div className="app-container">
       <Navbar />
@@ -46,17 +169,42 @@ const BoxesPage = () => {
               à réaliser notre diagnostic.
             </div>
           </div>
-          <img src={boximage} className="box-image" alt="box" />
         </div>
 
         <div className="BoxesContainer">
-          <BoxComponent
-            imageSrc={product}
-            title="Sérum cheveux"
-            description="Soin capillaire hydratant et nourrissant pour des cheveux éclatants de santé et de brillance."
-            price="128DT"
-          />
+          {currentPageBoxData.map((box, index) => (
+            <BoxComponent
+              key={index}
+              imageSrc={box.imageSrc}
+              title={box.title}
+              description={box.description}
+              price={box.price}
+            />
+          ))}
         </div>
+        {boxData.length > itemsPerPage && (
+          <div className="pagination">
+            <button
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+            >
+              {currentPage - 1}{" "}
+            </button>
+            <span> {currentPage}</span>
+            <button
+              onClick={() =>
+                setCurrentPage((prev) =>
+                  Math.min(prev + 1, Math.ceil(boxData.length / itemsPerPage))
+                )
+              }
+              disabled={
+                currentPage === Math.ceil(boxData.length / itemsPerPage)
+              }
+            >
+              {currentPage + 1}
+            </button>
+          </div>
+        )}
         <div className="prod-container">
           {reviews.map((review, index) => (
             <React.Fragment key={index}>

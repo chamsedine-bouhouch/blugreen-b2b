@@ -12,6 +12,8 @@ import NewPsd from "./pages/Auth/NewPassword";
 import ResetPassword from "./pages/Auth/ResetPsd";
 import Discover from "./pages/Discover/Discover.js";
 import BoxesPage from "./pages/Discover/BoxesPage.js";
+import { SingleProduct } from "./pages/Products/SingleProduct.js";
+import { ProductPage } from "./pages/Products/ProductPage.js";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
   {
     path: "/Boxes",
     element: <BoxesPage />,
+  },
+  {
+    path: "/singleprod",
+    element: <SingleProduct />,
+  },
+  {
+    path: "/products",
+    element: <ProductPage />,
   },
 ]);
 

@@ -1,0 +1,93 @@
+.filter-container {
+    width: 500px; /* Adjust the width as needed */
+    padding-right: 20px; 
+    margin-top: 3.5rem;
+  }
+  
+  .filter-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    
+  }
+
+.Productcontent{
+    display: flex;
+    flex-direction: row;
+    margin-left: 4rem;
+    justify-content: center;
+}  
+.category-row  {
+   
+   justify-content: center;
+   align-items: center;
+
+
+display: flex;
+flex-wrap: wrap; /* Allow items to wrap to the next row */
+
+
+  }
+
+.category-row button {
+    border:none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: white;
+    border-radius: 8px;
+    padding-left: 2rem;    padding-right: 2rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    background-color: #ccc;
+
+
+
+
+  }
+  .filter-group h3,
+  .filter-group label {
+      color: #3F3F3F;
+  }
+
+  
+  .category-row button.active {
+    background-color: var(--orange);
+    color: #fff;
+  }
+  
+@media screen and (max-width : 1024px){
+    .Productcontent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }  
+    .filter-container {
+        width: 500px;
+        margin-top: 3.5rem;
+        justify-content: center;
+        flex-direction: row; 
+        display: flex;
+        align-items: baseline;
+
+      }
+      .filter-group {
+        flex-direction: column; 
+        align-items: flex-start; 
+        justify-content: center;
+    padding: 1rem;
+  
+    }
+
+    .filter-group label {
+        width: auto; 
+        margin-right: 0;
+        margin-bottom: 10px; 
+    }
+      .filter-group h3,
+      .filter-group label {
+          width: 100%;
+      }
+}

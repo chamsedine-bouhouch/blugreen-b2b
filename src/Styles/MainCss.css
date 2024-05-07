@@ -19,7 +19,8 @@ header {
 width: 100%;
 	background-color: var(--blue);
 	color: var(--lighttextColor);
-    
+	z-index: 1000; 
+
 
 }
 .icon-container1 {
@@ -52,11 +53,14 @@ nav a {
 
     align-items:flex-start;
     width: 200px;
+	border-radius: 8px;
   }
  
   .dropdown:hover .dropdown-content {
     display: flex; 
     flex-direction: column;
+	z-index: 1001; /* Ensure navbar appears above other content */
+
     /* margin-top: 10px; */
   }
   
