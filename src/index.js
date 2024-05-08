@@ -12,8 +12,11 @@ import NewPsd from "./pages/Auth/NewPassword";
 import ResetPassword from "./pages/Auth/ResetPsd";
 import Discover from "./pages/Discover/Discover.js";
 import BoxesPage from "./pages/Discover/BoxesPage.js";
-import { SingleProduct } from "./pages/Products/SingleProduct.js";
 import { ProductPage } from "./pages/Products/ProductPage.js";
+import SingleProduct from "./pages/Products/SingleProduct.js";
+import SingleBox from "./pages/Discover/SingleBox.js";
+import { ConseilsExperts } from "./pages/Conseils/ConseilsExperts.js";
+import { ConseilsCoachs } from "./pages/Conseils/ConseilsCoachs.js";
 
 const router = createBrowserRouter([
   {
@@ -49,7 +52,7 @@ const router = createBrowserRouter([
     element: <Discover />,
   },
   {
-    path: "/Boxes",
+    path: "/box",
     element: <BoxesPage />,
   },
   {
@@ -59,6 +62,22 @@ const router = createBrowserRouter([
   {
     path: "/products",
     element: <ProductPage />,
+  },
+  {
+    path: "/product/:productId",
+    element: <SingleProduct />,
+  },
+  {
+    path: "/box/:BoxId",
+    element: <SingleBox />,
+  },
+  {
+    path: "/conseilexpert",
+    element: <ConseilsExperts />,
+  },
+  {
+    path: "/conseilcoach",
+    element: <ConseilsCoachs />,
   },
 ]);
 
