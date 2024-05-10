@@ -93,7 +93,7 @@ const BlogData = [
   {
     Titre: "Les bienfaits d'une pratique sportive régulière",
     Auteur: "Alex Sport",
-    Domaine: "Sport et santé",
+    Domaine: "Sport",
     Categorie: "Activité physique",
     Contenu:
       "La pratique régulière d'une activité sportive est bénéfique pour la santé physique et mentale. Dans cet article, je vais vous présenter les nombreux bienfaits d'une pratique sportive régulière, comme l'amélioration de la condition cardiovasculaire, le renforcement musculaire et la réduction du stress. Découvrez comment trouver le sport qui vous convient et intégrer l'activité physique à votre quotidien pour une vie plus saine et plus épanouissante.",
@@ -164,7 +164,7 @@ const BlogData = [
   {
     Titre: "Les étapes pour une peau éclatante et radieuse",
     Auteur: "Sarah Beaute",
-    Domaine: "Beauté et soins de la peau",
+    Domaine: "Beauté",
     Categorie: "Soins de la peau",
     Contenu:
       "Une peau éclatante et radieuse est le reflet d'une bonne santé et de soins adaptés. Dans cet article, je vais vous présenter les étapes essentielles pour une peau éclatante. Découvrez les meilleurs produits, les routines de soins efficaces et les astuces pour prendre soin de votre peau et révéler tout son éclat naturel.",
@@ -184,7 +184,7 @@ const BlogData = [
   {
     Titre: "Les bienfaits de l'exercice physique pendant la grossesse",
     Auteur: "Lucas Sport",
-    Domaine: "Sport et santé",
+    Domaine: "Sport",
     Categorie: "Grossesse et activité physique",
     Contenu:
       "L'exercice physique pendant la grossesse peut avoir de nombreux bienfaits pour la santé de la mère et du bébé. Dans cet article, je vais vous parler des avantages de l'exercice pendant la grossesse, les types d'activités recommandées et les précautions à prendre. Découvrez comment rester active et en forme pendant votre grossesse pour vivre une expérience plus confortable et épanouissante.",

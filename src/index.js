@@ -17,6 +17,8 @@ import SingleProduct from "./pages/Products/SingleProduct.js";
 import SingleBox from "./pages/Discover/SingleBox.js";
 import { ConseilsExperts } from "./pages/Conseils/ConseilsExperts.js";
 import { ConseilsCoachs } from "./pages/Conseils/ConseilsCoachs.js";
+import { Events } from "./pages/Evenement/Events.js";
+import { DetailEvent } from "./pages/Evenement/DetailEvent.js";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +80,15 @@ const router = createBrowserRouter([
   {
     path: "/conseilcoach",
     element: <ConseilsCoachs />,
+  },
+  {
+    path: "/events",
+    element: <Events />,
+  },
+
+  {
+    path: "/event/:eventId",
+    element: <DetailEvent />,
   },
 ]);
 

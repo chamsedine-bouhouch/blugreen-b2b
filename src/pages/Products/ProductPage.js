@@ -126,7 +126,7 @@ export const ProductPage = () => {
               {currentPageProductData.map((product, index) => (
                 <Link
                   key={index}
-                  to={`/product/${index}`} // Define the route for each product
+                  to={`/product/${index}`}
                   className="product-link"
                 >
                   <SecondProductComponent

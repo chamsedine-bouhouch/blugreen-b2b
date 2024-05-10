@@ -1,0 +1,52 @@
+.Blog-text-container{
+    width: 300px;
+    margin:10px
+}
+.truncated-content {
+    max-height: calc(1.6em * 3); 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+  }
+
+.Blog-image-container{
+    width: 320px; 
+    height: 230px; 
+    overflow: hidden; 
+    border-radius: 4px 4px 0px 0px;
+}
+
+.Blogtitre1{
+    color: var(--blue);
+    font-size: 18px;
+    margin-bottom: 1rem;
+    height: 80px;
+}
+.Blogauteur1{
+    color: var(--orange);
+    font-size: 20px;
+    margin-top: 0.5 rem;
+
+}
+.Blogcategory1{
+    color: #3f3f3f;
+    font-size: 14px;
+}
+.Blogcontenu1{
+    color: #3f3f3f;
+    line-height: 28px;
+}
+.blog2 a {
+    color: var(--blue); 
+  }
+  @media screen and (max-width : 1024px) {
+    .Blog-text-container{
+        width: 300px;
+        margin:10px
+    }
+    .Blog-image-container{
+        width: 500px; 
+        height: 330px; 
+    
+    }
+  }
