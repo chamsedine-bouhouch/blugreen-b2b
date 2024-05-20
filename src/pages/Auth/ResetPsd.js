@@ -26,11 +26,14 @@ const ResetPassword = () => {
       <div className="content-container">
         <div className="combined-row">
           <div className="left-col">
+            <div className="welcome-text poppins-semibold">
+              Bienvenue chez BluGreen
+            </div>
             <img src={ImageAuth} className="ImageAuth" alt="Logo" />
           </div>
           <div className="right-col">
-            <div className="welcome-text poppins-semibold">
-              Bienvenue chez BluGreen
+            <div className="welcome-text2 poppins-semibold">
+              Réinitialiser votre mot de passe
             </div>
 
             <div className="msg-text poppins-medium">

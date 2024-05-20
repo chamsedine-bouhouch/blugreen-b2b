@@ -1,0 +1,272 @@
+.ProfilTab{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
+    color: #3F3F3F;
+}
+.profil-tab.active {
+  border-bottom: 2px solid var(--orange); 
+
+}
+  .profil-tab {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 12px;
+    color: #3F3F3F;
+
+  }
+
+  .contentprofil{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 3rem;
+  }
+  .separator-2{
+    margin-top: 2rem; 
+    border-left: 2px solid var(--grey); 
+    margin-bottom: 3rem; 
+    margin-left: 2rem;
+    max-height: 30rem
+  }
+  .InfoContent{
+    justify-content: center;
+    margin-left: 5rem;
+  }
+
+    
+  .content {
+    flex: 1; 
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    
+    
+  
+  }
+  .separator-line1{
+    width: 50%;
+  }
+  .favoristitle{
+    color: #3F3F3F;
+    font-size: 24px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .vertical-separator {
+    border-right: 1px solid black; 
+    height: 100%;
+  }
+  .BoxesProfilContainer{
+    display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      margin-top: 4rem;
+
+      margin-bottom: 4rem;
+      
+}
+.forminfo{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.input-line1 {
+  position: relative;
+  margin: 0.8rem  ;
+  min-width:400px;
+  align-items:end ;
+  align-self: center;
+  margin-bottom: 1.7rem;
+  display: flex;
+  flex-direction: column;
+
+
+
+  
+}
+.input-line2{
+  position: relative;
+  margin: 0.8rem  ;
+  min-width:200px;
+  align-items: center;
+  align-self: center;
+
+  
+}
+.payscontainer {display: flex;}
+.modifier{
+font-size: 10px;
+margin-top: 10px;
+color:var(--orange);
+cursor: pointer; 
+text-decoration: none
+}
+.titleforminfo{
+  font-size: 18px;
+  color: #3F3F3F;
+}
+
+.modifier:hover {
+  text-decoration: underline; 
+}
+select {
+  width: 100%; 
+  padding: 0.5rem; 
+  font-size: 1rem; 
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  background-color: #fff; 
+  appearance: none;
+}
+
+option {
+  padding: 0.5rem; 
+  font-size: 1rem; 
+  background-color: #fff;
+  color: #333; 
+}
+
+.journal-image{
+  width: 210px; 
+  height: auto; 
+  border-radius: 5px;
+}
+
+.journalcontainer{
+  margin-top: 3rem;
+}
+.JournalComponent{
+  display: flex;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05  ) ; 
+  border-radius: 5px;
+}
+
+.journaltitle{
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.journaldescription{
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 1rem;
+
+}
+.journaltext{
+  margin-left: 3rem;
+  width: 600px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+}
+.buttonpoint{
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+}
+
+
+.contentprofil button {
+  border:none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: white;
+  border-radius: 8px;
+  padding-left: 2rem;    padding-right: 2rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  background-color: var(--orange);
+  align-self:flex-end;
+
+
+
+}
+.read-more-btn {
+  align-self: flex-end; 
+  margin-bottom: 10px;
+}
+/* pointfid */
+.ptfid1{
+  font-size: 16px;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+.ptfid2{
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+
+@media (max-width: 1024px) {
+  .input-line1 {
+    position: relative;
+    margin: 0.8rem  ;
+    min-width:400px;
+    align-items:end ;
+    align-self: center;
+    margin-bottom: 1.7rem;
+
+  
+    
+  }
+  .ProfilTab{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
+    color: #3F3F3F;
+    
+}
+.contentprofil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.InfoContent{
+  justify-content: center;
+  margin-left: 0rem;
+}
+
+}
+
+@media (max-width: 800px) {
+  .input-line1 {
+    position: relative;
+    margin: 0.8rem  ;
+    min-width:500px;
+    align-items:end ;
+  
+    
+  }
+  .ProfilTab{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
+    color: #3F3F3F;
+}
+.contentprofil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.forminfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+}

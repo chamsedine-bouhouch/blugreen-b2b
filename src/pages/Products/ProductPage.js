@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import SecondProductComponent from "../../components/Product/SecondProductComponent";
 import { Link } from "react-router-dom";
 import ProductData from "./ProductData";
+import Product from "../../components/Product/Product";
 
 export const ProductPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -129,7 +130,7 @@ export const ProductPage = () => {
                   to={`/product/${index}`}
                   className="product-link"
                 >
-                  <SecondProductComponent
+                  <Product
                     key={index}
                     imageSrc={product.imageSrc}
                     title={product.title}

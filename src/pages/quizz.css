@@ -1,9 +1,3 @@
-/* body {
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  margin: 0;
-} */
 
 .container {
   max-width: 600px;
@@ -11,12 +5,12 @@
 }
 
 .question {
-  margin-bottom: 20px;
+  margin-bottom: 4rem;
 }
 
 .question h2 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
 }
 
 .answers {
@@ -33,11 +27,12 @@
   transition: border-color 0.3s ease, background-color 0.3s ease; }
 
 .card:hover {
-  border-color: #007bff;
+  border-color: var(--bleuCiel);
 }
 
 .card.selected {
-  background-color: rgb(110, 182, 110); 
+  background-color:var(--orange); 
+  color: white;
 }
 
 .card-label {
@@ -65,12 +60,13 @@
   height: 15px;
   background-color: #f0f0f0;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #4caf50;
+  background-color:var(--orange);
   border-radius: 10px;
   transition: width 1s ease;
 }
@@ -88,13 +84,13 @@
 
 .card-content input[type="text"]:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: var(--bleuCiel);
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .quizz button {
-  background-color: rgb(39, 152, 39);
+  background-color: var(--blue);
   border: none;
   color: white;
   padding: 13px 30px;
@@ -107,7 +103,7 @@
 }
 
 .quizz button:hover {
-  background-color: rgb(24, 90, 24);
+  background-color: var(--orange);
 }
 .child-container {
   border: 1px solid #ccc; /* Border for the container */
@@ -119,3 +115,36 @@
   font-weight: bold; /* Make the header text bold */
   margin-bottom: 5px; /* Add some margin below the header */
 }
+
+
+.content2{
+  margin-top: 4rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  margin-bottom: 3rem;
+  flex: 1;
+  padding-left:2rem ;
+  padding-right: 2rem;
+  
+
+}
+.app-container1 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  min-width: 95vh;
+  margin-right: 0 !important;
+
+  }
+
+  @media screen and (max-width : 550px){
+    .app-container1 {
+      min-height: 200vh; 
+    
+      }
+      .content1 {
+  
+        
+      flex: 1;
+      }      
+  }

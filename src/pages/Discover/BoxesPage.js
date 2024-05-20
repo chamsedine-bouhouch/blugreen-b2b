@@ -43,7 +43,7 @@ const BoxesPage = () => {
       <Navbar />
       <div className="content">
         <div className="NosBoxes">
-          <div className="TextContainer poppins-bold">
+          <div className="TextContainer1 poppins-bold">
             <div className="BoxTITLE poppins-bold">Nos boxes </div>
 
             <div className="BOXDescription poppins-semibold">
@@ -63,7 +63,6 @@ const BoxesPage = () => {
                 key={index}
                 imageSrc={box.imageSrc}
                 title={box.title}
-                description={box.description}
                 price={box.price}
               />
             </Link>

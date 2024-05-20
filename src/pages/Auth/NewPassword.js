@@ -39,12 +39,12 @@ const NewPsd = () => {
       <div className="content-container">
         <div className="combined-row">
           <div className="left-col">
-            <img src={ImageAuth} className="ImageAuth" alt="Logo" />
-          </div>
-          <div className="right-col">
             <div className="welcome-text poppins-semibold">
               Bienvenue chez BluGreen
             </div>
+            <img src={ImageAuth} className="ImageAuth" alt="Logo" />
+          </div>
+          <div className="right-col">
             <div className="msg-text poppins-medium">
               Veuillez entre votre nouveau mot de passe
             </div>

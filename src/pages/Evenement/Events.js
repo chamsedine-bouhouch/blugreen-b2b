@@ -21,7 +21,7 @@ export const Events = () => {
       <Navbar />
       <div className="content">
         <div className="NosBoxes">
-          <div className="TextContainer poppins-bold">
+          <div className="TextContainer1 poppins-bold">
             <div className="BoxTITLE poppins-bold">
               Explorez Nos Événements{" "}
             </div>

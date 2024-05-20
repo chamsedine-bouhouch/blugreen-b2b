@@ -41,13 +41,14 @@
 	color: var(--lighttextColor);
 	text-decoration: none;
   margin-bottom: 1rem;
+  font-size: 12px;
 }
 .newsletter {
     margin-top: 20px;
   }
   
   .newsletter h4 {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 10px;
   }
   

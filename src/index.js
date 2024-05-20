@@ -19,6 +19,14 @@ import { ConseilsExperts } from "./pages/Conseils/ConseilsExperts.js";
 import { ConseilsCoachs } from "./pages/Conseils/ConseilsCoachs.js";
 import { Events } from "./pages/Evenement/Events.js";
 import { DetailEvent } from "./pages/Evenement/DetailEvent.js";
+import { Diagnostic } from "./pages/Diagnostic/Diagnostic.js";
+import { Profil } from "./pages/Profil/Profil.js";
+import { Cart } from "./pages/Payment/Cart.js";
+import { CarteBancaire } from "./pages/Payment/CarteBancaire";
+import { PointRelais } from "./pages/Payment/PointRelais.js";
+import { SingleBlog } from "./pages/Conseils/SingleBlog.js";
+import { Success } from "./pages/Payment/Success.js";
+import { SuccessClick } from "./pages/Payment/SuccessClick.js";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +97,38 @@ const router = createBrowserRouter([
   {
     path: "/event/:eventId",
     element: <DetailEvent />,
+  },
+  {
+    path: "/diagnostic",
+    element: <Diagnostic />,
+  },
+  {
+    path: "/profil",
+    element: <Profil />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+  },
+  {
+    path: "/cartebancaire",
+    element: <CarteBancaire />,
+  },
+  {
+    path: "/pointrelais",
+    element: <PointRelais />,
+  },
+  {
+    path: "/blogdetail",
+    element: <SingleBlog />,
+  },
+  {
+    path: "/success",
+    element: <Success />,
+  },
+  {
+    path: "/success2",
+    element: <SuccessClick />,
   },
 ]);
 

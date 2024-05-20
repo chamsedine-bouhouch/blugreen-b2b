@@ -34,12 +34,13 @@ const Login = () => {
       <div className="content-container">
         <div className="combined-row">
           <div className="left-col">
-            <img src={ImageAuth} className="ImageAuth" alt="Logo" />
-          </div>
-          <div className="right-col">
             <div className="welcome-text poppins-semibold">
               Bienvenue chez BluGreen
             </div>
+            <img src={ImageAuth} className="ImageAuth" alt="Logo" />
+          </div>
+          <div className="right-col">
+            <div className="welcome-text2 poppins-semibold">Se connecter </div>
             <form className="login-form" onSubmit={handleSubmit}>
               <div className="input-line">
                 <input

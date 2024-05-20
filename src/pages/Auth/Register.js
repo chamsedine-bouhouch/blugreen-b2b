@@ -37,11 +37,14 @@ const Register = () => {
       <div className="content-container">
         <div className="combined-row">
           <div className="left-col">
+            <div className="welcome-text poppins-semibold">
+              Bienvenue chez BluGreen
+            </div>
             <img src={ImageAuth} className="ImageAuth" alt="Logo" />
           </div>
           <div className="right-col">
-            <div className="welcome-text poppins-semibold">
-              Bienvenue chez BluGreen
+            <div className="welcome-text2 poppins-semibold">
+              Créer un compte
             </div>
 
             <form className="login-form" onSubmit={handleSubmit}>
@@ -106,7 +109,7 @@ const Register = () => {
                       className="btn btn-primary poppins-medium"
                       onClick={handleSubmit}
                     >
-                      Créer un compte
+                      S'inscrire
                     </button>
                   </Link>
                 </div>

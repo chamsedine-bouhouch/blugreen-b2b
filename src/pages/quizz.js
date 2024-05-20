@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./quizz.css";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 function Quizz() {
   const [jsonData, setJsonData] = useState(null);
@@ -153,7 +155,7 @@ function Quizz() {
       userResponses[lastQuestionKey]?.responseKeys.length > 0
     ) {
       setQuizSubmitted(true);
-      navigate("/quiz-result", { state: { userResponses: userResponses } });
+      navigate("/diagnostic", { state: { userResponses: userResponses } });
     } else {
       alert("Please answer the last question before submitting.");
     }
@@ -162,156 +164,163 @@ function Quizz() {
   const progress = (currentQuestionIndex / totalQuestions) * 100;
 
   return (
-    <div className="container">
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          <div className="progress-bar-container">
-            <div
-              className="progress-bar"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-          {!quizSubmitted && currentQuestionIndex < jsonData.length && (
-            <div className="question">
-              <h2>
-                {jsonData[currentQuestionIndex].key}:{" "}
-                {jsonData[currentQuestionIndex].text.en}
-              </h2>
+    <div className="app-container1">
+      <Navbar />
+      <div className="content2">
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <div>
+            <div className="progress-bar-container">
+              <div
+                className="progress-bar"
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+            {!quizSubmitted && currentQuestionIndex < jsonData.length && (
+              <div className="question poppins-medium">
+                <h2>{jsonData[currentQuestionIndex].text.fr}</h2>
 
-              <div className="answers">
-                {jsonData[currentQuestionIndex].answers.map(
-                  (answer) =>
-                    // Render only if the answer has no children
-                    !answer.children && (
-                      <div
-                        key={answer.id}
-                        className={`card ${
-                          userResponses[
-                            jsonData[currentQuestionIndex].key
-                          ]?.responseKeys?.includes(answer.key)
-                            ? "selected"
-                            : ""
-                        }`}
-                        onClick={() =>
-                          handleResponseChange(
-                            answer.key,
-                            answer.tags,
-                            !!answer.children,
-                            null,
-                            null
-                          )
-                        }
-                      >
-                        <div className="card-content">
-                          <input
-                            type="checkbox"
-                            id={answer.id}
-                            name={jsonData[currentQuestionIndex].key}
-                            value={answer.key}
-                            style={{ display: "none" }}
-                          />
-                          {answer.text && (
-                            <>
-                              <label htmlFor={answer.id}>
-                                {answer.text.en}
-                              </label>
-                              {answer.image && (
-                                <img src={answer.image} alt={answer.text.en} />
-                              )}
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    )
-                )}
-                {jsonData[currentQuestionIndex].answers.map(
-                  (answer) =>
-                    // Render only if the answer has children
-                    answer.children && (
-                      <div className="child-container">
-                        {answer.name}
-                        {answer.children.map((child) => (
-                          <div
-                            key={child.id}
-                            className={`card ${
-                              userResponses[
-                                jsonData[currentQuestionIndex].key
-                              ]?.responseKeys?.includes(child.key)
-                                ? "selected"
-                                : ""
-                            }`}
-                            onClick={(event) =>
-                              handleResponseChange(
-                                child.key,
-                                child.tags,
-                                !!child.children,
-                                event,
-                                null
-                              )
-                            }
-                          >
-                            <div className="card-content">
-                              <input
-                                type="checkbox"
-                                id={child.id}
-                                name={jsonData[currentQuestionIndex].key}
-                                value={child.key}
-                                style={{ display: "none" }}
-                              />
-                              <div className="card-content">
-                                <label htmlFor={child.id}>
-                                  {child.text.en}
+                <div className="answers poppins-medium">
+                  {jsonData[currentQuestionIndex].answers.map(
+                    (answer) =>
+                      // Render only if the answer has no children
+                      !answer.children && (
+                        <div
+                          key={answer.id}
+                          className={`card ${
+                            userResponses[
+                              jsonData[currentQuestionIndex].key
+                            ]?.responseKeys?.includes(answer.key)
+                              ? "selected"
+                              : ""
+                          }`}
+                          onClick={() =>
+                            handleResponseChange(
+                              answer.key,
+                              answer.tags,
+                              !!answer.children,
+                              null,
+                              null
+                            )
+                          }
+                        >
+                          <div className="card-content poppins-medium">
+                            <input
+                              type="checkbox"
+                              id={answer.id}
+                              name={jsonData[currentQuestionIndex].key}
+                              value={answer.key}
+                              style={{ display: "none" }}
+                            />
+                            {answer.text && (
+                              <>
+                                <label htmlFor={answer.id}>
+                                  {answer.text.fr}
                                 </label>
-                                {child.image && (
-                                  <img src={child.image} alt={child.text.en} />
+                                {answer.image && (
+                                  <img
+                                    src={answer.image}
+                                    alt={answer.text.fr}
+                                  />
                                 )}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      )
+                  )}
+                  {jsonData[currentQuestionIndex].answers.map(
+                    (answer) =>
+                      // Render only if the answer has children
+                      answer.children && (
+                        <div className="child-container poppins-medium">
+                          {answer.name}
+                          {answer.children.map((child) => (
+                            <div
+                              key={child.id}
+                              className={`card ${
+                                userResponses[
+                                  jsonData[currentQuestionIndex].key
+                                ]?.responseKeys?.includes(child.key)
+                                  ? "selected"
+                                  : ""
+                              }`}
+                              onClick={(event) =>
+                                handleResponseChange(
+                                  child.key,
+                                  child.tags,
+                                  !!child.children,
+                                  event,
+                                  null
+                                )
+                              }
+                            >
+                              <div className="card-content">
+                                <input
+                                  type="checkbox"
+                                  id={child.id}
+                                  name={jsonData[currentQuestionIndex].key}
+                                  value={child.key}
+                                  style={{ display: "none" }}
+                                />
+                                <div className="card-content poppins-medium">
+                                  <label htmlFor={child.id}>
+                                    {child.text.fr}
+                                  </label>
+                                  {child.image && (
+                                    <img
+                                      src={child.image}
+                                      alt={child.text.fr}
+                                    />
+                                  )}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}{" "}
-                      </div>
-                    )
-                )}
+                          ))}{" "}
+                        </div>
+                      )
+                  )}
 
-                {jsonData[currentQuestionIndex].type === "TEXT_INPUT" && (
-                  <div className="card-content">
-                    <input
-                      type="text"
-                      placeholder="Enter your response"
-                      value={
-                        userResponses[jsonData[currentQuestionIndex].key]
-                          ?.textInputValue || ""
-                      }
-                      onChange={(e) =>
-                        handleResponseChange(
-                          jsonData[currentQuestionIndex].key,
-                          [],
-                          false,
-                          null,
-                          e.target.value
-                        )
-                      }
-                    />
-                  </div>
-                )}
-              </div>
+                  {jsonData[currentQuestionIndex].type === "TEXT_INPUT" && (
+                    <div className="card-content poppins-medium">
+                      <input
+                        type="text"
+                        placeholder="Entrez votre réponse"
+                        value={
+                          userResponses[jsonData[currentQuestionIndex].key]
+                            ?.textInputValue || ""
+                        }
+                        onChange={(e) =>
+                          handleResponseChange(
+                            jsonData[currentQuestionIndex].key,
+                            [],
+                            false,
+                            null,
+                            e.target.value
+                          )
+                        }
+                      />
+                    </div>
+                  )}
+                </div>
 
-              <div className="quizz">
-                {currentQuestionIndex > 0 && (
-                  <button onClick={handlePreviousQuestion}>Back</button>
-                )}
-                {currentQuestionIndex < jsonData.length - 1 ? (
-                  <button onClick={handleNextQuestion}>Next</button>
-                ) : (
-                  <button onClick={handleSubmitQuiz}>Submit Quiz</button>
-                )}
+                <div className="quizz poppins-medium">
+                  {currentQuestionIndex > 0 && (
+                    <button onClick={handlePreviousQuestion}>Retourner</button>
+                  )}
+                  {currentQuestionIndex < jsonData.length - 1 ? (
+                    <button onClick={handleNextQuestion}>Suivant</button>
+                  ) : (
+                    <button onClick={handleSubmitQuiz}> Envoyer</button>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-      )}
+            )}
+          </div>
+        )}
+      </div>
+      <Footer />
     </div>
   );
 }

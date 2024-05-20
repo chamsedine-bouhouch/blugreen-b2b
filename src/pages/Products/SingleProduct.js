@@ -7,6 +7,7 @@ import ProductData from "./ProductData";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import SecondProductComponent from "../../components/Product/SecondProductComponent";
+import Product from "../../components/Product/Product";
 
 const SingleProduct = () => {
   const { productId } = useParams();
@@ -49,19 +50,17 @@ const SingleProduct = () => {
           />
         </div>
         <div className="product-details poppins-medium">
+          <p>{stockStatus}</p>
           <div className="detail1 ">
-            <h2>{product.title}</h2>
-            <p>{stockStatus}</p>
+            <h1>{product.title}</h1>
+            <p> {product.size}</p>
           </div>
 
           <p>{product.description}</p>
 
           <div className="detail2">
             <p> {product.price}</p>
-            <p> {product.size}</p>
-          </div>
 
-          <div className="detail2">
             <div className="quantity-controls">
               <input
                 type="number"
@@ -69,6 +68,8 @@ const SingleProduct = () => {
                 onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
               />
             </div>
+          </div>
+          <div className="detail2">
             <button onClick={handleAddToCart}> Ajouter à mon panier</button>
           </div>
         </div>
@@ -123,7 +124,7 @@ const SingleProduct = () => {
       <div className="Produits-similaires">
         {similarProducts.map((similarProduct, index) => (
           <Link key={index} to={`/product/${index}`} className="product-link">
-            <SecondProductComponent
+            <Product
               key={index}
               imageSrc={product.imageSrc}
               title={product.title}

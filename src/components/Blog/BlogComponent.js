@@ -1,31 +1,17 @@
 import React from "react";
 import "./BlogComponent.css";
-const BlogComponent = ({ imageSrc, title, auteur, contenu, date, domaine }) => {
-  const truncatedContent = (content) => {
-    const rows = content.split("\n");
-    if (rows.length > 3) {
-      return rows.slice(0, 3).join("\n");
-    }
-    return content;
-  };
-
+const BlogComponent = ({ imageSrc, title, auteur, date, domaine }) => {
   return (
-    <div className="Container">
-      <div className="BoxContainer">
-        <div className="Blog-image-container">
+    <div className="eventContainer">
+      <div className="topeventcontainer">
+        <div className="event-image-container">
           <img src={imageSrc} className="Box-image" alt="blog" />
         </div>
-        <div className="Blog-text-container">
-          <div className="Blogtitre1 poppins-semibold">{title}</div>
-          <div className="truncated-content poppins-medium">
-            {truncatedContent(contenu)}
-          </div>
-          <div className="Blogauteur1">{auteur}</div>
-          <div className="Blogcategory1">{domaine}</div>
-          <div className="Blogcategory1">{date}</div>
+        <div className="TextEvent">
+          <div className="Blogauteur1 poppins-medium">{auteur}</div>
+          <h6 className="Blogcategory poppins-medium">{date}</h6>
+          <div className="eventdescription poppins-semibold">{title}</div>
         </div>
-
-        <button> Découvrir</button>
       </div>
     </div>
   );

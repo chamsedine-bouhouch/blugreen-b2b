@@ -16,6 +16,25 @@
   
 
 }
+.diagnostique-background {
+  background-image: url('../src/Images/background1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px; 
+  align-items: center;
+  justify-content: center;
+}
+
+ .DiagnosticContainer {
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 5rem;
+}
+
+.CarrouselContainer .DiagnosticContainer .DiagnosticText {
+  color: #333; /* Adjust the text color if needed */
+
+}
 .DiagnosticContainer {
   
   display: flex;
@@ -26,14 +45,31 @@
   flex-direction: row;
 
 }
+.bigcombitext{
+  font-size: 14px;
+  width: 200px;
+  text-align: justify;
+  margin-top: 2rem;
+  color:#7e7e7e;
+
+}
 .accueilTitle {
   font-size: 40px; 
   color: var(--blue);
   text-align: center;
 }
+.accueilTitle1 {
+  font-size: 34px; 
+  color:#7e7e7e;
+  text-align: center;
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
 .DiagnosticTitle {
   font-size: 40px; 
   color: var(--blue);
+  width: 550px;
+  
 }
 .DiagnosticDescription {
   font-size: 20px; 
@@ -41,6 +77,8 @@
   width:400px;
   margin-top: 2rem;
 margin-bottom: 1rem;
+text-align: justify;
+
 }
 .DiagnosticContainer button {
   background-color:  var(--orange);
@@ -65,6 +103,9 @@ margin-bottom: 1rem;
   margin-right: 5rem;
   margin-left: 5rem;
   flex-direction: column;
+  margin-top: 15rem;
+  margin-bottom: 5rem;
+
 }
 .IconsButton button {
   background-color:  var(--orange);
@@ -86,7 +127,9 @@ margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
  text-align: center;
- margin-top: 6rem;
+ margin-top: 1rem;
+ display: flex;
+ flex-direction: column;
 }
 .AccueilDescription{
   font-size: 24;
@@ -98,14 +141,7 @@ margin-bottom: 1rem;
 
 
 }
-.carousel-image{
-  width: 555px; 
-  height: auto; 
-}
-.CarrouselContainer{
-  justify-content: center;
-  margin-right: 0px;
-}
+
 
 .box-image-container {
   width: 555px; 
@@ -113,6 +149,99 @@ margin-bottom: 1rem;
   overflow: hidden; 
 }
 
+.CombinationContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 4rem;
+ }
+.combinationsmall-imageContainer{
+  width: 205px; 
+  height: 250px; 
+  overflow: hidden; 
+  filter: brightness(80%) contrast(100%) saturate(80%) grayscale(20%); 
+   transition: filter 0.1s;
+   border-radius: 1.5rem;
+
+
+
+}
+.combinationsmall1-imageContainer
+{
+  width: 125px; 
+  height: 150px; 
+  overflow: hidden; 
+  filter: brightness(80%) contrast(100%) saturate(80%) grayscale(20%); 
+   transition: filter 0.1s;
+   border-radius: 1.5rem;
+
+
+
+}
+.combinationsmall1-imageContainer:hover
+{
+  filter: none; 
+
+
+
+}   
+.Combinationbiigg{
+  display: flex;
+justify-content: center;
+/* align-items: center; */
+box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+padding: 0.5rem;
+padding-right: 1rem;
+border-radius: 1.5rem;
+
+margin-right: 1rem;
+margin-left : 1rem;
+max-width: 550px;
+}
+.combinationsmall-imageContainer:hover {
+  filter: none; 
+}
+.CombinationSmall{  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  
+}
+.CombinationBigContainer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.bigCombititle{
+  font-size: 24px;
+  margin-top: 2rem;
+  color:#3F3F3F;
+}
+.image-textcombi {
+  position: absolute;
+
+color: white;  
+}
+.combinationbig-imageContainer{
+  width: 300px; 
+  height: 350px; 
+  overflow: hidden; 
+  border-radius: 1.5rem;
+margin-right: 2rem;
+
+}
+.CombinationBig{
+  display: flex; 
+margin-bottom: 1rem;
+
+
+}
 .expert-image-container {
   width: 555px; 
   height: 250px; 
@@ -181,7 +310,7 @@ margin-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.BoxContainer{
+.BoxContainer1{
   align-items: flex-start;
   justify-content: flex-start;
 padding-bottom: 1rem; 
@@ -258,9 +387,58 @@ text-align: center;
       justify-content: center;
       align-items: center ;
     
+
+    }
+    .expertlandingpage{
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; 
+      align-items: center;
+      margin-bottom: 2rem;
+
+
+      
     }
 
+    .expertsimagecontainer{
+      width: 150px;
+      height: 150px;
+      overflow: hidden; 
+      border-radius: 100%;
 
+      margin-top: 4rem;
+
+
+    }
+    .expertsimage{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    }
+    .expertttext{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 250px;
+
+      
+
+    }
+    
+    .expettname{
+      color: #3F3F3F;
+      font-size: 20px;
+      margin-bottom:0.5rem ;
+      text-align: center;
+    }
+    .expettdomaine{
+      color: #3F3F3F;
+      font-size: 20px;
+      text-align: center;
+
+    }
 @media screen and (max-width : 1024px){
 
   .DiagnosticTitle {
@@ -282,6 +460,13 @@ text-align: center;
     color: #3F3F3F;
     margin-top: 1rem;
   text-align: center;
+  }
+  .accueilTitle1 {
+    font-size: 34px; 
+    color:#7e7e7e;
+    text-align: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
   .DiagnosticContainer button {
     padding-left:2rem ;
@@ -319,6 +504,19 @@ flex-direction: column;
   
   
   }
+  
+  .IconsButton{
+   
+    margin-top: 5rem;
+  
+  }
+.CombinationContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 4rem;
+ }
   .prod-container {
     margin-left: 0; /* Adjust margin as needed */
     margin-top: 5rem; /* Adjust margin as needed */
@@ -351,11 +549,12 @@ flex-direction: column;
   margin-left: 0.5rem;
   }
   .icons-container {
-    margin-right: 2rem;
+    margin-left: 3rem;
     margin-bottom: 2rem;
     justify-content: center;
     
   }
+  
   .icon {
     padding: 1rem;
   }
@@ -383,7 +582,9 @@ color: #3F3F3F;
 
 @media screen and (max-width : 550px){
 
-
+.CombinationBig{
+  flex-direction: column;
+}
  
   .DiagnosticTitle {
     font-size: 24px; 
@@ -478,7 +679,7 @@ flex-direction: column;
     padding-right: 0; /* Adjust padding as needed */
   }
   .icons-container {
-    margin-right: 2.5rem;
+    margin-left: 3rem;
     margin-bottom: 2rem; /* Adjust margin as needed */
   }
 

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
 }
 .blog-tabs{
     display: flex;
@@ -15,15 +16,23 @@
 
 .Blogtitre{
     color: var(--blue);
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 1rem;
+    width: 650px;
 }
 .Blogauteur{
     color: var(--orange);
-    font-size: 25px;
-    margin-top: 3rem;
+    font-size: 20px;
+    margin-top: 2rem;
 
 }
+.Blog-content{
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 .Blogcategory{
     color: #3f3f3f;
     font-size: 14px;
@@ -31,9 +40,11 @@
 .Blogcontenu{
     color: #3f3f3f;
     line-height: 28px;
+    width: 700px;
 }
-.blog1 a {
+.blog a {
     color: var(--blue); 
+    /* text-decoration: none; */
   }
 .Box-content {
     display: flex;
@@ -42,6 +53,40 @@
     flex-wrap: wrap; 
 
 }
+
+.BlogContainerImage{
+    width: 410px;
+    height:310px;
+    margin-right: 2rem;
+}
+
+
+.Blog-background{
+    background-image: url('../../Images/belle-femme-prenant-soin-elle-meme-maison.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px; 
+    align-items: center;
+    justify-content: center;
+  
+}
+.SingleBlogSection{
+    margin-top: 3rem;
+}
+.SectionBlogTitle{
+    margin-bottom: 1rem;
+    color: #3f3f3f;
+    font-size: 24px;
+}
+.SectionBlogText{
+    margin-bottom: 1rem;
+    color: #3f3f3f;
+    font-size: 18px;
+    text-align: justify;
+}
+
+
+
 
 
 

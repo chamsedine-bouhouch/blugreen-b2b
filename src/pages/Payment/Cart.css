@@ -1,0 +1,171 @@
+
+.content1 {
+    flex: 1; 
+    margin-top: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+  }
+
+  .accueilTitle2 {
+    font-size: 34px; 
+    color:var(--blue);
+    text-align: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 4rem;
+  }
+.contentcart{
+    display: flex;
+    margin-top: 4rem;
+}
+.textProd{
+    color:var(--blue);
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+}
+.Text{
+    color: #333;
+    margin-right: 0.5rem;
+}
+.total{
+    display: flex;
+    margin-bottom: 2rem;
+   
+
+}
+.total1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color:#333  
+
+}
+.TextContainer button{
+    background-color:  var(--orange);
+    border: none;
+    color: white;
+    padding: 10px ;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; 
+    margin-bottom: 0px;
+    border-radius:  4px;
+  }
+  
+    .TextContainer{
+        /* align-items: center; */
+        justify-content:space-between;
+  box-shadow: 0 10px 18px rgba(74, 74, 74, 0.2);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;  
+width: 450px;  }
+
+.center{
+    justify-content: center;
+    display: flex;
+
+}
+
+.carte{
+    margin-right: 7rem;
+}
+
+.Bank{
+    width: 100px;
+margin-left: 14rem;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.bankMethod{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+.bankImage{
+    width: 100%;
+    object-fit: cover;
+}
+
+.map-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 3rem;
+  }
+  .MapContainer{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.textmap{
+    font-size: 24px;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+  /* Success */
+
+
+.content4{
+    flex: 1; 
+    margin-top: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.SuccessContainer{
+    flex-direction: column;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    background-color: var(--orange);
+    padding: 2rem;
+    width: 550px;
+    height: 250px;
+    color: white ;
+    font-size: 24px;
+    border-radius: 2rem;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+.success{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+@media screen and (max-width : 1024px){
+.content1{
+    flex-direction: column;
+}    
+.carte{
+    margin-right: 0rem;
+    margin-bottom: 3rem;
+}
+.Bank{
+    width: 100px;
+margin-left: 16.5rem;
+
+}
+
+}

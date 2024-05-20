@@ -38,7 +38,7 @@ function Navbar() {
 
       <nav ref={navRef}>
         <div className="dropdown" onClick={toggleDropdown1}>
-          <a>Découvrez</a>
+          <a className="poppins-medium">Découvrez</a>
           {showDropdown1 && (
             <div className="dropdown-content column">
               <a
@@ -47,11 +47,13 @@ function Navbar() {
                   color: "#167378",
                   marginBottom: "10px",
                 }}
+                className="poppins-regular"
               >
                 Notre diagnostique
               </a>
               <a
-                href="/Boxes"
+                className="poppins-regular"
+                href="/box"
                 style={{
                   color: "#167378",
                 }}
@@ -61,12 +63,15 @@ function Navbar() {
             </div>
           )}
         </div>
-        <a href="/products">Produits</a>
+        <a href="/products" className="poppins-medium">
+          Produits
+        </a>
         <div className="dropdown" onClick={toggleDropdown3}>
-          <a>Conseils d'experts</a>
+          <a className="poppins-medium">Conseils d'experts</a>
           {showDropdown3 && (
             <div className="dropdown-content column">
               <a
+                className="poppins-regular"
                 href="/conseilexpert"
                 style={{
                   color: "#167378",
@@ -76,6 +81,7 @@ function Navbar() {
                 Nos experts en santé
               </a>
               <a
+                className="poppins-regular"
                 href="/conseilcoach"
                 style={{
                   color: "#167378",
@@ -86,13 +92,15 @@ function Navbar() {
             </div>
           )}
         </div>
-        <a href="/events">Evénements</a>
+        <a href="/events" className="poppins-medium">
+          Evénements
+        </a>
         <div className="icons">
-          <a href="/quizz" className="diagnostique-link">
+          <a href="/quizz" className="diagnostique-link poppins-medium">
             Faites votre diagnostique
           </a>
           <span className="icon-container1">
-            <a>
+            <a href="/profil">
               <BsPerson
                 style={{
                   width: "20px",
@@ -100,10 +108,10 @@ function Navbar() {
                 }}
               />
             </a>
-            <a>
+            <a href="/profil">
               <BsHeart style={{ width: "18px", height: "auto" }} />
             </a>
-            <a>
+            <a href="/cart">
               <BsCart
                 style={{
                   width: "20px",

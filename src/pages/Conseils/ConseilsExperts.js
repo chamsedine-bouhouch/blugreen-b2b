@@ -23,7 +23,7 @@ export const ConseilsExperts = () => {
       <Navbar />
       <div className="content">
         <div className="NosBoxes">
-          <div className="TextContainer poppins-bold">
+          <div className="TextContainer1 poppins-bold">
             <div className="BoxTITLE poppins-bold">
               Nos experts santé vous conseillent{" "}
             </div>
@@ -67,45 +67,30 @@ export const ConseilsExperts = () => {
             <h3>Gynécologues</h3>
           </div>
         </div>
-        <div className="product-content poppins-regular">
-          <div className="article1">
-            <img
-              src={randomBlog.imageSrc}
-              className="carousel-image"
-              alt={randomBlog.Titre}
-            />
-            <div className="blog1">
-              <div className="Blogtitre poppins-semibold">
-                {randomBlog.Titre}
+        <div className="Blog-content poppins-regular">
+          {filteredBlog.map((blog) => (
+            <div className="article1" key={blog.id}>
+              <div className="BlogContainerImage">
+                <img
+                  src={blog.imageSrc}
+                  className="image-prod"
+                  alt={blog.Titre}
+                />
               </div>
+              <div className="blog">
+                <div className="Blogtitre poppins-semibold">{blog.Titre}</div>
+                <div className="Blogcontenu poppins-regular">
+                  {blog.Contenu}
+                </div>
+                <a href="/blogdetail">Voir plus</a>
+                <div className="Blogauteur poppins-medium">
+                  Dr {blog.Auteur}
+                </div>
 
-              <div className="Blogcontenu poppins-regular">
-                {randomBlog.Contenu}
+                <div className="Blogcategory poppins-medium">
+                  Publié le {blog.Date_de_publication}
+                </div>
               </div>
-              <a href="/link-to-full-article">Voir plus</a>
-              <div className="Blogauteur poppins-medium">
-                Dr {randomBlog.Auteur}
-              </div>
-              <div className="Blogcategory poppins-medium">
-                {randomBlog.Categorie}
-              </div>
-              <div className="Blogcategory poppins-medium">
-                Publié le {randomBlog.Date_de_publication}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="Box-content poppins-regular">
-          {filteredBlog.map((Blog, index) => (
-            <div key={index} className="article">
-              <BlogComponent
-                imageSrc={Blog.imageSrc}
-                title={Blog.Titre}
-                contenu={Blog.Contenu}
-                auteur={Blog.Auteur}
-                domaine={Blog.Domaine}
-                date={Blog.Date_de_publication}
-              />
             </div>
           ))}
         </div>
