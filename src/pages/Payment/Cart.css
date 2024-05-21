@@ -68,6 +68,8 @@
   padding: 1rem;
   margin-bottom: 1rem;
   margin-left: 1.5rem;  
+  border-radius:  4px;
+
 width: 450px;  }
 
 .center{
@@ -158,6 +160,11 @@ flex-direction: column;
 .content1{
     flex-direction: column;
 }    
+.contentcart{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+}
 .carte{
     margin-right: 0rem;
     margin-bottom: 3rem;

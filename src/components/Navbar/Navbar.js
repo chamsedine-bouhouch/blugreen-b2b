@@ -100,7 +100,7 @@ function Navbar() {
             Faites votre diagnostique
           </a>
           <span className="icon-container1">
-            <a href="/profil">
+            <a href="/register">
               <BsPerson
                 style={{
                   width: "20px",

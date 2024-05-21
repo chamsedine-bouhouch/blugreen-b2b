@@ -11,27 +11,27 @@ const steps = [
   {
     icon: Besoins,
     title: "Détection",
-    backgroundColor: rgba(101, 141, 169, 0.8),
+    backgroundColor: rgba(236, 236, 108, 1),
   },
   {
     icon: Ingrédients,
     title: "Déchiffrage",
-    backgroundColor: rgba(209, 182, 84, 0.8),
+    backgroundColor: rgba(116, 209, 234, 1),
   },
   {
     icon: Compatibilité,
     title: "Vérification",
-    backgroundColor: rgba(112, 158, 96, 0.8),
+    backgroundColor: rgba(255, 185, 144, 1),
   },
   {
     icon: Produits,
     title: "Adaptation",
-    backgroundColor: rgba(178, 100, 109, 0.8),
+    backgroundColor: rgba(191, 155, 222, 1),
   },
   {
     icon: Boxes,
     title: "Personnalisation",
-    backgroundColor: rgba(106, 94, 165, 0.8),
+    backgroundColor: rgba(157, 231, 215, 1),
   },
 ];
 
